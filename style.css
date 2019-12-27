@@ -44,7 +44,7 @@ html {
       layer). The formula is: 
         ((translateZ * -1) / perspective) + 1 
   */
-  background-image: url("michealle_site/background.png");
+  background-image: url("michealle-site/background.png");
 }
 
 .midd {
