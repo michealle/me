@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html>
 <style>
-.tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
-}
 
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  
-  /* Position the tooltip */
+.image {
   position: absolute;
-  z-index: 1;
-  top: 100%;
-  left: 50%;
-  margin-left: -60px;
+  transform-origin: 0 50%;
+  width: 420px;
+  height: 420px;
 }
 
-.tooltip:hover .tooltiptext {
-  visibility: visible;
+.background__image {
+  @extend .image;
+  height: 840px;
+  transform: translateZ(0px) scale(1);
 }
+
+.middle__image {
+  @extend .image;
+  top: 150px;
+  transform: translateZ(5px) scale(parallax-scale-factor(5));
+}
+
+.foreground__image {
+  @extend .image;
+  top: 125px;
+  transform: translateZ(2px) scale(parallax-scale-factor(2));
+}
+
 </style>
 
+  
 <body style="text-align:center;">
 
-<h2>Bottom Tooltip</h2>
-<p>Move the mouse over the text below:</p>
-
-<div class="tooltip">Hover over me
-  <span class="tooltiptext">Tooltip text</span>
+<div class="parallax-container">
+  <div class="wrapper">
+    <img class="background__image" src="https://path/to/background.png">
+    <img class="middle__image" src="https://path/to/middle.png" />
+    <img class="foreground__image" src="https://path/to/foreground.png" />
+  </div>
 </div>
 
 </body>
