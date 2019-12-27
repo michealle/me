@@ -12,12 +12,14 @@
 .background__image {
   @extend .image;
   height: 840px;
+  background:red;
   transform: translateZ(0px) scale(1);
 }
 
 .middle__image {
   @extend .image;
   top: 150px;
+  border:thin solid black;
   transform: translateZ(5px) scale(parallax-scale-factor(5));
 }
 
@@ -34,9 +36,9 @@
 
 <div class="parallax-container">
   <div class="wrapper">
-    <img class="background__image" src="https://path/to/background.png">
-    <img class="middle__image" src="https://path/to/middle.png" />
-    <img class="foreground__image" src="https://path/to/foreground.png" />
+    <div class="background__image"></div>
+    <div class="middle__image"></div>
+    <div class="foreground__image"></div>
   </div>
 </div>
 
