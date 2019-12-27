@@ -6,7 +6,7 @@ html, body{
 	margin:0;
 	top:0;
 	left:0;
-	background-color:red;
+	background:red;
 }
 
 .container {
@@ -15,8 +15,6 @@ html, body{
   align-items: center;
   height: auto;
   width: 100vw;
-  perspective: 8px;
-  perspective-origin: 50%;
 }
 
 .element {
