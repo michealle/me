@@ -32,7 +32,7 @@ html {
 }
 
 .back {
-  transform: translateZ(-3px) scale(2.5);
+  transform: translateZ(-3px) scale(parallax-scale-factor(-3));
   /* 
     IMPORTANT! 
       TranslateZ: TranslateZ pushes layer back so it scrolls slower and appears 
