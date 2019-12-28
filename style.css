@@ -11,7 +11,7 @@ html {
   height: 100vh;
   overflow-x: hidden; /* Restrict scroll movement with overflow */
   overflow-y: scroll;
-  perspective: 2px;
+  perspective: 5px;
   transform-style: preserve-3d;
   /* 
     IMPORTANT! Parent's perspective property determines strength of perspective effect 
@@ -33,7 +33,7 @@ html {
 }
 
 .back {
-  transform: translateZ(-3px) scale(2.5);
+  transform: translateZ(-4px) scale(1.8);
   /* 
     IMPORTANT! 
       TranslateZ: TranslateZ pushes layer back so it scrolls slower and appears 
@@ -49,7 +49,7 @@ html {
 }
 
 .midd {
-  transform: translateZ(0);
+  transform: translateZ(-2) scale(1.4);
   /* Here, the translateZ value is closer to foreground value than background
   value, so the midground will seem to be pretty close to the foreground
   and will scroll pretty fast.  */
@@ -57,7 +57,7 @@ html {
 }
 
 .fore {
-  transform: translateZ(2) scale(0);
+  transform: translateZ(0) scale(1);
   /* Zero value for translateZ property makes foreground scroll normally.
   No scale value is needed because this layer is not translated.
   NOTE: TranslateZ value can be greater than 0 for extreme foreground. */
