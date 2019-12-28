@@ -49,7 +49,7 @@ html {
 }
 
 .midd {
-  transform: translateZ(-2) scale(1.4);
+  transform: translateZ(0);
   /* Here, the translateZ value is closer to foreground value than background
   value, so the midground will seem to be pretty close to the foreground
   and will scroll pretty fast.  */
@@ -57,7 +57,7 @@ html {
 }
 
 .fore {
-  transform: translateZ(1) scale(0.8);
+  transform: translateZ(2) scale(0.6);
   /* Zero value for translateZ property makes foreground scroll normally.
   No scale value is needed because this layer is not translated.
   NOTE: TranslateZ value can be greater than 0 for extreme foreground. */
