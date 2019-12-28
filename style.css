@@ -48,7 +48,7 @@ html {
 }
 
 .midd {
-  transform: translateZ(2px) scale(parallax-scale-factor(2);
+  transform: translateZ(2px) scale(parallax-scale-factor(2));
   /* Here, the translateZ value is closer to foreground value than background
   value, so the midground will seem to be pretty close to the foreground
   and will scroll pretty fast.  */
