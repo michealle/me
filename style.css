@@ -26,7 +26,7 @@ html {
   padding: 0;
 
   padding-top: 10vh; 
-  padding-bottom: 100vh; /* Padding creates more room on the bottom so layers can scroll farther */
+  padding-bottom: 50vh; /* Padding creates more room on the bottom so layers can scroll farther */
   background-repeat: no-repeat;
   background-size: cover;
 }
