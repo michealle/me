@@ -20,41 +20,48 @@ html {
 
 .layer { /* These are values shared by all three layers. */
 
-  background-repeat: no-repeat;
 }
 
 .back {
+  height:100%;
+  width:100%;
   position:absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 0;
- 
   background-image: url("michealle-site/background.png");
+  background-size:contain;
+  background-repeat:repeat;
   z-index: 0;
-  opacity:0;
 }
 
 .midd {
-  position:relative;
-  left: 0;
-  bottom: 0;
-  padding: 0;
-  
+  position:absolute;
+  bottom:0;
+  left:0;
+  padding:0;
+
+  height:100vh;
+  width:100vh;
+
   background-image: url("michealle-site/bottom-flowers.png");
+  background-size:contain;
+  background-repeat:no-repeat;
   z-index: 1;
 }
 
 .fore {
-  position: relative;
+  position: absolute;
   top: 0;
   right: 0;
   padding: 0;
-  height:auto;
-  width:30%;
- 
+
+  height:100vh;
+  width:100vh;
+
   background-image: url("michealle-site/top-flowers.png");
+  background-size:contain;
+  background-repeat:no-repeat;
+
   z-index: 2;
 }
 
