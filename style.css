@@ -50,6 +50,8 @@ html {
   left: 0;
   bottom: 0;
   padding: 0;
+  height:auto;
+  width:30vw;
   transform: translateZ(-2px) scale(2);
   /* Here, the translateZ value is closer to foreground value than background
   value, so the midground will seem to be pretty close to the foreground
@@ -62,6 +64,8 @@ html {
   top: 0;
   right: 0;
   padding: 0;
+  height:auto;
+  width:30vw;
   transform: translateZ(2) scale(0);
   /* Zero value for translateZ property makes foreground scroll normally.
   No scale value is needed because this layer is not translated.
