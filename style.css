@@ -19,19 +19,18 @@ html {
 
 .layer { /* These are values shared by all three layers. */
   position: absolute; /* Layer positioning is important */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 0;
 
-  padding-top: 10vh; 
   padding-bottom: 100vh; /* Padding creates more room on the bottom so layers can scroll farther */
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .back {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0;
   transform: translateZ(-3px) scale(2.5);
   /* 
     IMPORTANT! 
@@ -48,6 +47,9 @@ html {
 }
 
 .midd {
+  left: 0;
+  bottom: 0;
+  padding: 0;
   transform: translateZ(-2px) scale(2);
   /* Here, the translateZ value is closer to foreground value than background
   value, so the midground will seem to be pretty close to the foreground
@@ -57,6 +59,9 @@ html {
 }
 
 .fore {
+  top: 0;
+  right: 0;
+  padding: 0;
   transform: translateZ(2) scale(0);
   /* Zero value for translateZ property makes foreground scroll normally.
   No scale value is needed because this layer is not translated.
