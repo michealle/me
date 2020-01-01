@@ -33,15 +33,13 @@ html {
  
   background-image: url("michealle-site/background.png");
   z-index: 0;
-  opacity:0.5;
+  opacity:0;
 }
 
 .midd {
   left: 0;
   bottom: 0;
   padding: 0;
-  height:auto;
-  width:30%;
   
   background-image: url("michealle-site/bottom-flowers.png");
   z-index: 1;
