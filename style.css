@@ -22,7 +22,6 @@ html {
   position: absolute; /* Layer positioning is important */
 
   background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .back {
