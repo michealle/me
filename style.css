@@ -10,6 +10,7 @@ html {
 .parallax-container { /* Parent element for all three layers */
   height: 100vh;
   width:100vw;
+  box-sizing:border-box;
   overflow-x: hidden; /* Restrict scroll movement with overflow */
   overflow-y: scroll;
   scroll-snap-type: y proximity;
@@ -20,9 +21,8 @@ html {
 
 .layer { /* These are values shared by all three layers. */
   box-sizing:border-box;
-
-  height:100vh;
-  width:100vw;
+  height:100%;
+  width:100%;
 }
 
 .back {
@@ -42,14 +42,15 @@ html {
 }
 .nav{
   position:fixed;
-  bottom:0;
+  top:0;
   box-sizing:border-box;
   float:left;
   width:100%;
   color:rgb(175,186,176);
   font-family: "futura";
+  font-size: 1em;
   background: rgb(82,92,73);
-  padding:0.5vw 0;
+  padding:.25em 0;
 }
 ul{
   box-sizing:border-box;
@@ -60,8 +61,8 @@ li{
   text-align: center;
   float:left;
   display:inline-block;
-  width:calc(97vw / 3);
-  margin:0 .5vw;
+  width:calc(100vw / 3 - .5em);
+  margin:0 .25em;
   padding:.5em 0;
   background: rgb(39,52,33);
 }
@@ -70,9 +71,8 @@ li{
   height:100%;
   width:100%;
   position:absolute;
-  top: 0;
   left: 0;
-
+  box-sizing:border-box;
   background-size:contain;
   background-position:center center;
   background-repeat:no-repeat;
@@ -143,16 +143,18 @@ a:hover{
 
 
   .bg2{
-    margin-top:0;
     background-image: url("michealle-site/circle-bg2.png");
     z-index:1;
     background-attachment: fixed;
+;
+
   }
 
   .bg3{
     background-image: url("michealle-site/circle-bg3.png");
     z-index:2;
     background-attachment: fixed;
+
   }
 
   .mountain{
