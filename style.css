@@ -86,7 +86,7 @@ li{
   position:absolute;
   top:calc(50% - 5.5em);
   width:100%;
-  z-index: 6;
+  z-index: 10;
   color: rgb(175,186,176);
   text-shadow:-1px -1px 2px rgb(39,52,33);
 }
@@ -98,14 +98,7 @@ h1{
   color: rgb(175,186,176);
   text-shadow:-1px -1px 2px rgb(39,52,33);
 }
-a{
-  text-decoration: none;
-  color: rgb(175,186,176);
-  text-shadow:-1px -1px 2px rgb(39,52,33);
-}
-a:hover{
-  opacity:0.5;
-}
+
   .bg1{
     background-image: url("michealle-site/circle-bg.png");
     z-index:0;
