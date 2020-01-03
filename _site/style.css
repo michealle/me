@@ -12,7 +12,7 @@ html {
   width:100vw;
   overflow-x: hidden; /* Restrict scroll movement with overflow */
   overflow-y: scroll;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   /* 
     IMPORTANT! Parent's perspective property determines strength of perspective effect 
   */
