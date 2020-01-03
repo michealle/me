@@ -1,55 +1,118 @@
-<html>
+* {
+  margin:0;
+  padding:0;
+}
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>CSS Parallax</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-    </style>
-  </head>
+html {
+  background-color: rgb(245, 210, 220);
+}
 
-  <body>
+.parallax-container { /* Parent element for all three layers */
+  height: 100vh;
+  width:100vw;
+  overflow-x: hidden; /* Restrict scroll movement with overflow */
+  overflow-y: scroll;
+  /* 
+    IMPORTANT! Parent's perspective property determines strength of perspective effect 
+  */
+}
 
-    <div class="parallax-container">
-      <div class="back">
-        <div class="nav">
-          <ul class="menu">
-            <li>one</li>
-            <li>two</li>
-            <li>three</li>
-          </ul>
-        </div>
-        <div class="frame border2 one"></div>
-        <div class="frame profile"></div>
-        <div class="frame bg1 1"></div>
-      </div>
-      <div class="back">
-        <div class="frame border1 two"></div>
-        <div class="frame bg2 2"></div>
-        <div class="layer midd"></div>
-        <div class="layer fore"></div>
-      </div>
-      <div class="back">
-        <div class="frame border2 three"></div>
-        <div class="frame byanihan"></div>
-        <div class="frame bg3 3"></div>
-        <div class="frame mountain"></div>
-      </div>
-      <div class="back">
-        <div class="frame border1 four"></div>
-        <div class="contact">
-          <h1>MICHEALLE</br>RENEE YU LEE</h1></br><p><a href="hello@michealle.com">E: hello@michealle.com</a></br>M: +63917 808 1999</br>IG: ellaehcim</p>
-        </div>
-        <div class="frame bg2 4"></div>
-      </div>
+.layer { /* These are values shared by all three layers. */
+  box-sizing:border-box;
 
-      <!-- HTML elements have a natural stacking order. -->
-      <!-- Arrange layers so they appear in the correct order, or use z-index. -->
-    </div>
+  height:100vh;
+  width:100vw;
+}
 
-  </body>
+.back {
+  height:200%;
+  width:100%;
+  position:absolute;
+  top: 0;
+  left: 0;
+  background-image: url("michealle-site/background.png");
+  background-size:contain;
+  background-repeat:repeat;
+
+  z-index: 0;
+}
+
+.frame{
+  height:100%;
+  width:100%;
+  position:absolute;
+  top: 0;
+  left: 0;
+
+  background-size:contain;
+  background-position:center center;
+  background-repeat:no-repeat;
+}
+
+  .bg1{
+    background-image: url("michealle-site/circle-bg.png");
+    background-attachment: fixed;
+    z-index:1;
+    position:absolute;
+  }
+
+  .profile{
+    background-image: url("michealle-site/me.png");
+    background-attachment: fixed;
+    z-index:2;
+  }
+
+  .border1{
+    background-image: url("michealle-site/border2.png");
+    background-attachment: fixed;
+    position: fixed;
+    z-index:3;
+  }
+
+  .border2{
+    margin-top:100vh;
+    position:absolute;
+    background-image: url("michealle-site/border1.png");
+    z-index:4;
+  }
+
+  .bg2{
+    margin-top:100vh;
+    background-attachment: fixed;
+    background-image: url("michealle-site/circle-bg2.png");
+    z-index:2;
+  }
+
+.midd {
+  position:absolute;
+  bottom:0;
+  left:0;
+  padding:0;
+
+  background-image: url("michealle-site/bottom-flowers.png");
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  background-position: left bottom;
+  z-index: 4;
+}
 
 
-</html>
+.fore {
+  position:absolute;
+  top: 0;
+  right: 0;
+  padding: 0;
 
+  background-image: url("michealle-site/top-flowers.png");
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position: right top;
+
+  z-index: 5;
+}
+
+
+
+
+/* Learn more about CSS parallax: http://keithclark.co.uk/articles/pure-css-parallax-websites/ */
