@@ -39,18 +39,40 @@ li{
   background:rgb(72,82,63);
 
   font-family: futura;
-  font-size:.8em;
+  font-size:1em;
 }
 
 a{
+  display:flex;
+  flex-grow:1;
+  flex-shrink:1;
+  justify-content:center;
+  align-items:center;
+  height:100%;
   color:rgb(175,186,176);
   text-decoration: none;
-  text-shadow:1px 1px 1px rgb(39,52,33);
+  box-shadow:-1px -1px 2px rgba(175,186,176,.7);
+  text-shadow:-1px -1px 1px rgb(39,52,33);
 }
 
 a:hover{
-  text-shadow:-1px -1px 1px rgb(39,52,33);
+  text-shadow:1px 1px 1px rgb(39,52,33);
+  box-shadow:1px 1px 2px rgba(175,186,176,.7);
 }
+
+.footer{
+  width:100vw;
+  height:3em;
+  padding:.25em .125em;
+  background:rgb(39,52,33);
+  display:flex;
+  justify-content:center;
+  position:fixed;
+  bottom:0;
+  box-sizing:border-box;
+  z-index: 1000
+}
+
 /*******************/
 .wrapper { /* Parent element for all three layers */
   height: 100vh;
@@ -79,18 +101,25 @@ a:hover{
   position:absolute;
   height:100%;
   width:100%;
-  background-size:auto 70%;
+  background-size: 100vh;
   background-position:center center;
   background-repeat:no-repeat;
 
+}
+
+@media only screen and (orientation: portrait){
+  .content{
+  background-size: 120vw;
+  }
 }
 
 /** PAGE ONE **/
 
 .pageone .background{
   background-image: url("michealle-site/circle-bg.png");
-  z-index:0;    
   background-attachment: fixed;
+  z-index:0;    
+  
 }
 
 .pageone .sandwich{
@@ -100,6 +129,7 @@ a:hover{
 
 .pageone .frame{
   background-image: url("michealle-site/border2.png");
+  background-attachment: fixed;
   z-index:4;
 }
 
@@ -107,11 +137,11 @@ a:hover{
 .pagetwo .background{
   background-image: url("michealle-site/circle-bg2.png");
   z-index:1;
-  background-attachment: fixed;
 }
 
 .pagetwo .frame{
   background-image: url("michealle-site/border1.png");
+  background-attachment: fixed;
   z-index:3;
 }
 
@@ -120,14 +150,20 @@ a:hover{
   height:100%;
   width:100%;
   position:absolute;
-  background-size:auto 70%;
+  background-size:100vh;
   background-repeat:no-repeat;
   background-attachment: fixed;
   z-index:4;
 }
+
+@media only screen and (orientation: portrait){
+  .pagetwo .decoration {
+  background-size: 100vw;
+  }
+}
 .decoration.bottom {
   background-image: url("michealle-site/bottom-flowers.png");
-  background-position: left bottom;
+  background-position: left bottom 3em;
   z-index: 5;
 }
 .decoration.top {
@@ -156,16 +192,23 @@ a:hover{
 
 .pagethree .decoration{
   box-sizing:border-box;
-  height:50%;
+  height:100%;
   min-width:100%;
   position:absolute;
   bottom:0;
-  background-size:100%;
+  background-size:100vw auto;
   background-repeat:no-repeat;
   background-attachment: fixed;
-  background-position: center bottom;
+  background-position: center bottom -8em;
   background-image: url("michealle-site/mountain.png");
   z-index:5;
+}
+
+@media only screen and (orientation: portrait){
+  .pagethree .decoration{
+  background-position: center bottom;
+  background-size:auto 100vh;
+  }
 }
 
 /** PAGE FOUR **/
@@ -179,6 +222,9 @@ a:hover{
 }
 
 .pagefour .sandwich{
+  height:100%;
+  width:100%;
+  margin:0%;
   box-sizing:border-box;
   display:flex;
   align-items:center;
@@ -200,9 +246,11 @@ a:hover{
   color: white;
   text-shadow:-1px -1px 1px rgb(39,52,33);
   text-decoration: none;
+  box-shadow:none;
 }
 .pagefour a:hover{
   text-shadow:1px 1px 1px rgb(39,52,33);
+  box-shadow:none;
 }
 h1{
   font-size:1.5em;
