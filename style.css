@@ -73,6 +73,14 @@ a:hover{
   z-index: 1000
 }
 
+.test{
+  height:100vh;
+  width:100vw;
+  position: fixed;
+  background-image:url("michealle-site/background.png");
+  background-size:contain;
+  z-index:-100;
+}
 /*******************/
 .wrapper { /* Parent element for all three layers */
   height: 100vh;
@@ -81,6 +89,7 @@ a:hover{
   overflow-x: hidden; /* Restrict scroll movement with overflow */
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
+
 }
 
 .page {
@@ -88,9 +97,9 @@ a:hover{
   height:100%;
   width:100%;
   position:relative;
-  background-image: url("michealle-site/background.png");
   background-size:100%;
-  background-attachment: fixed;  
+  overflow-y:scroll;
+  background:none;
   scroll-snap-align:start;
 
   z-index: -1;
@@ -181,8 +190,15 @@ a:hover{
 }
 
 .pagethree .sandwich{
-  background-image: url("michealle-site/byanihan.png");
-  z-index:3;
+  background-image: url("michealle-site/byanihan1.png");
+  background-size: auto 50%;
+  z-index:6;
+}
+
+@media only screen and (orientation: portrait){
+  .pagethree .sandwich{
+    background-size: 70% auto;
+  }
 }
 .pagethree .frame{
   background-image: url("michealle-site/border2.png");
@@ -198,7 +214,6 @@ a:hover{
   bottom:0;
   background-size:100vw auto;
   background-repeat:no-repeat;
-  background-attachment: fixed;
   background-position: center bottom -8em;
   background-image: url("michealle-site/mountain.png");
   z-index:5;
@@ -206,7 +221,7 @@ a:hover{
 
 @media only screen and (orientation: portrait){
   .pagethree .decoration{
-  background-position: center bottom;
+  background-position: center bottom -2em;
   background-size:auto 100vh;
   }
 }
