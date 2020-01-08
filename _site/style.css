@@ -138,7 +138,7 @@ a:hover{
 }
 
 .pageone .frame{
-  background-image: url("michealle-site/border2.png");
+  background-image: url("michealle-site/border1.png");
   background-attachment: fixed;
   z-index:4;
 }
@@ -150,7 +150,7 @@ a:hover{
 }
 
 .pagetwo .frame{
-  background-image: url("michealle-site/border1.png");
+  background-image: url("michealle-site/border2.png");
   background-attachment: fixed;
   z-index:3;
 }
@@ -202,7 +202,7 @@ a:hover{
   }
 }
 .pagethree .frame{
-  background-image: url("michealle-site/border2.png");
+  background-image: url("michealle-site/border1.png");
   background-attachment: fixed;
   z-index:4;
 }
@@ -232,9 +232,13 @@ a:hover{
   z-index:100;
 }
 .pagefour .background{
-  background-image: url("michealle-site/circle-bg2.png");
+  background-image: url("michealle-site/circle-bg4.png");
   z-index:1;
   background-attachment: fixed;
+}
+.pagefour .frame{
+  background-image: url("michealle-site/border2.png");
+  z-index:2;
 }
 
 .pagefour .sandwich{
@@ -255,17 +259,19 @@ a:hover{
   height:100%;
   z-index: 10;
   color: white;
-  text-shadow:-1px -1px 1px rgb(39,52,33);
+  text-shadow:-1px -1px 1px rgba(39,52,33,.7);
 }
 
 .pagefour a{
   color: white;
-  text-shadow:-1px -1px 1px rgb(39,52,33);
+  text-shadow:-1px -1px 1px rgba(39,52,33,.7);
   text-decoration: none;
   box-shadow:none;
+  padding:0;
+  margin:0;
 }
 .pagefour a:hover{
-  text-shadow:1px 1px 1px rgb(39,52,33);
+  text-shadow:1px 1px 1px rgba(39,52,33,.7);
   box-shadow:none;
 }
 h1{
