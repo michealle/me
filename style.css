@@ -134,12 +134,13 @@ li{
 }
 
 /** PAGE ONE **/
-
+.pageone{
+  z-index: 100
+}
 .pageone .background{
   background-image: url("michealle-site/circle-bg.png");
   background-attachment: fixed;
   z-index:0;    
-  
 }
 
 .pageone .sandwich{
@@ -150,7 +151,16 @@ li{
 .pageone .frame{
   background-image: url("michealle-site/border2.png");
   background-attachment: fixed;
-  z-index:4;
+  z-index:3;
+}
+
+.pageone a{
+  color: transparent;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:50vh;
+  width:50vw;
 }
 
 /** PAGE TWO **/
