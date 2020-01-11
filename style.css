@@ -134,7 +134,7 @@ a:hover{
 /** PAGE ONE **/
 
 .pageone .background{
-  background-image: url("michealle-site/circle-bg4.png");
+  background-image: url("michealle-site/circle-bg.png");
   background-attachment: fixed;
   z-index:0;    
   
@@ -153,7 +153,7 @@ a:hover{
 
 /** PAGE TWO **/
 .pagetwo .background{
-  background-image: url("michealle-site/circle-bg.png");
+  background-image: url("michealle-site/circle-bg4.png");
   background-attachment: fixed;
   z-index:1;
 }
@@ -163,7 +163,7 @@ a:hover{
   z-index:2;
 }
 .pagetwo .frame{
-  background-image: url("michealle-site/border1.png");
+  background-image: url("michealle-site/border2.png");
   background-attachment: fixed;
   z-index:3;
 }
@@ -182,6 +182,10 @@ a:hover{
 @media only screen and (orientation: portrait){
   .pagetwo .decoration {
   background-size: 100vw;
+  }
+
+  .pagetwo .sandwich{
+  background-size: 60%;
   }
 }
 .decoration.bottom {
@@ -241,7 +245,7 @@ a:hover{
   z-index:100;
 }
 .pagefour .background{
-  background-image: url("michealle-site/circle-bg4.png");
+  background-image: url("michealle-site/circle-bg2.png");
   z-index:1;
   background-attachment: fixed;
 }
