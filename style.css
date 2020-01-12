@@ -93,6 +93,7 @@ li{
   -ms-overflow-style: none;
   scroll-snap-type: y mandatory;
   -webkit-overflow-scrolling:touch;
+  border:thick solid red;
 }
 
 .wrapper::-webkit-scrollbar {
