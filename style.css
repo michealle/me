@@ -84,7 +84,6 @@ li{
 /*******************/
 .wrapper { /* Parent element for all three layers */
   height:100vh;
-  height: calc(var(--vh, 1vh) * 100);
   width:100vw;
   position: absolute;
   box-sizing:border-box;
@@ -93,6 +92,12 @@ li{
   -ms-overflow-style: none;
   scroll-snap-type: y mandatory;
   -webkit-overflow-scrolling:touch;
+}
+
+@media only screen and (max-device-width:812){
+  .wrapper{
+    height: calc(var(--vh, 1vh) * 100);
+  }
 }
 
 .wrapper::-webkit-scrollbar {
