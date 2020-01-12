@@ -129,8 +129,8 @@ li{
 
 @media only screen and (orientation: portrait){
   .content{
-  background-size: 120vw;
-  }
+    background-size: 120vw;
+    }
 }
 
 /** PAGE ONE **/
@@ -159,11 +159,14 @@ li{
   justify-content:space-around;
   align-items:center;
   width:100%;
+  margin-top:3em;
+  height:calc(100% - 6em)!important;
 }
 .pageone .text{
-  width:100%;
+  min-width:28%;
   letter-spacing:0.01em;
 }
+
 .pageone h1{
   font-family: 'Monoton', sans-serif;
   font-weight:400;
@@ -174,9 +177,9 @@ li{
   letter-spacing:0.1em;
   text-shadow:none;
 }
-.pageone .link .blank a{
+.pageone .blank{
   height:50vh;
-  min-width:50vw;
+  width:44%;
 }
 .pageone a{
   display:flex;
@@ -192,6 +195,7 @@ li{
 .pageone a:hover{
   text-shadow:1px 1px 1px rgba(39,52,33,.7);
   box-shadow:none;
+  color:white;
 }
 
 @media only screen and (orientation: portrait){
@@ -208,6 +212,10 @@ li{
     align-items: center;
     justify-content:center;
     flex-direction:column;
+  }
+
+  .pageone .link .blank{
+    height:120vw;
   }
 
 }
