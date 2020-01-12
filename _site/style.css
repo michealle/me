@@ -1,6 +1,7 @@
 *, html, body{
   margin:0;
   padding:0;
+  min-height: 100%;
   box-sizing:border-box;
   scroll-behavior:smooth;
 }
@@ -84,6 +85,7 @@ li{
 /*******************/
 .wrapper { /* Parent element for all three layers */
   height:100vh;
+  height: calc(var(--vh, 1vh) * 100)!important;
   width:100vw;
   position: absolute;
   box-sizing:border-box;
@@ -94,11 +96,6 @@ li{
   -webkit-overflow-scrolling:touch;
 }
 
-@media only screen and (orientation:portrait){
-  .wrapper{
-    height: calc(var(--vh, 1vh) * 100)!important;
-  }
-}
 
 .wrapper::-webkit-scrollbar {
   display: none;
