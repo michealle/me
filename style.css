@@ -38,7 +38,7 @@ li{
   flex:1;
   background:rgb(72,82,63);
 
-  font-family: "Poiret One", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size:1em;
 }
 
@@ -162,7 +162,7 @@ li{
 }
 .pageone .text{
   width:100%;
-  letter-spacing:0.05em;
+  letter-spacing:0.01em;
 }
 .pageone h1{
   font-family: 'Monoton', sans-serif;
@@ -348,10 +348,10 @@ li{
   justify-content:center;
   flex-direction:column;
   text-align: center;
-  font-family: "Poiret One", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size:1em;
   line-height:1.8em;
-  letter-spacing:0.05em;
+  letter-spacing:0.01em;
   position:absolute;
   width:100%;
   height:100%;
