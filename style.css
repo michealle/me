@@ -94,7 +94,7 @@ li{
   -webkit-overflow-scrolling:touch;
 }
 
-@media only screen and (max-device-width:812px){
+@media only screen and (orientation:portrait){
   .wrapper{
     height: calc(var(--vh, 1vh) * 100);
   }
