@@ -5,6 +5,15 @@
   scroll-behavior:smooth;
 }
 
+@media screen only (max-device-width:812px){
+  *,html{
+    height:100%;
+  }
+  body{
+    min-height:100%;
+  }
+}
+
 .nav{
   width:100vw;
   height:3em;
