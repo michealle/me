@@ -38,7 +38,7 @@ li{
   flex:1;
   background:rgb(72,82,63);
 
-  font-family: futura;
+  font-family: "Josefin Sans", sans-serif;
   font-size:1em;
 }
 
@@ -327,7 +327,7 @@ li{
   justify-content:center;
   flex-direction:column;
   text-align: center;
-  font-family: "futura";
+  font-family: "Josefin Sans", sans-serif;
   font-size:1em;
   line-height:1.8em;
   position:absolute;
@@ -352,9 +352,9 @@ li{
 }
 h1{
   font-size:1.5em;
-  font-family: "futura";
+  font-family: "Century Gothic", sans-serif;
   letter-spacing:0.1em;
-  font-weight:medium;
+  font-weight:700;
   color: white;
   text-shadow:-1px -1px 1px rgb(39,52,33);
 }
