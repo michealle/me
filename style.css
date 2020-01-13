@@ -164,8 +164,9 @@ li{
   height:calc(100% - 6em)!important;
 }
 .pageone .text{
-  min-width:28%;
+  min-width:30%;
   letter-spacing:0.01em;
+  padding:0 1em;
 }
 
 .pageone h1{
@@ -180,7 +181,11 @@ li{
 }
 .pageone .blank{
   height:50vh;
-  width:44%;
+  width:35%;
+}
+.pageone .blank a{
+  width:100%;
+  height:100%;
 }
 .pageone a{
   display:flex;
@@ -213,10 +218,11 @@ li{
     align-items: center;
     justify-content:center;
     flex-direction:column;
+    padding:1em;
   }
 
   .pageone .link .blank{
-    height:120vw;
+    height:50vw;
   }
 
 }
