@@ -91,7 +91,8 @@ li{
   overflow-y: scroll;
   -ms-overflow-style: none;
   scroll-snap-type: y mandatory;
-  -webkit-overflow-scrolling:touch;
+  -ms-scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch; /* Needed to work on iOS Safari */
 }
 
 
