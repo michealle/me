@@ -118,6 +118,7 @@ li{
 .page::-webkit-scrollbar {
   display: none;
   }
+
 .content{
   box-sizing:border-box;
   position:absolute;
@@ -129,10 +130,74 @@ li{
 
 }
 
+.overlay{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  position:absolute;
+  box-sizing:border-box;
+  text-shadow:none;
+  padding:10%;
+  height:50vh;
+  width:50vh;
+  transition:0.3s;
+  z-index:200;
+
+  font-size:.1em;
+  line-height:1;
+  opacity:0;
+}
+.overlay h1{
+  font-family: 'Monoton', sans-serif;
+  font-weight:400;
+  font-style:normal;
+  font-size:2em;
+  color:white;
+  line-height: 1.2;
+  letter-spacing:0.1em;
+  text-shadow:none;
+}
+.overlay a{
+  text-align: center;
+  color:white;
+  text-decoration: none;
+  box-shadow:none;
+  transition:0.3s ease-in-out;
+  position:relative;
+  display:inline-block;
+}
+.overlay a::after{
+  position:absolute;
+  content:'';
+  left:0%;
+  height:2px;
+  width:100%;
+  bottom:0px;
+  background:white;
+  transition: transform 0.3s ease-in-out;
+  transform:scaleX(0);
+}
+.overlay:hover{
+  font-size:1em;
+  line-height:1.5;
+  opacity:1;
+  height:calc(100% - 6em);
+  width:100%;
+}
+.overlay a:hover::after{
+  transform:scaleX(1);
+  transform-origin:left;
+}
+
 @media only screen and (orientation: portrait){
   .content{
     background-size: 120vw;
     }
+  .overlay{
+    height:50vw;
+    width:50vw;
+  }
 }
 
 /** PAGE ONE **/
@@ -205,7 +270,23 @@ li{
   color:white;
 }
 
+.pageone .link .overlay{
+  background:#cf9229;
+}
+.pageone .link .overlay:hover{
+  height:100%;
+  width:100%;
+}
+.pageone .link .overlay h1,.pageone .link .overlay a{
+  color:white;
+  text-shadow:none;
+  display:inline;
+}
+
 @media only screen and (orientation: portrait){
+  .pageone .background, .pageone .frame{
+    background-attachment: scroll
+  }
   .pageone .link{
     display:flex;
     flex-direction:column;
@@ -213,7 +294,7 @@ li{
   }
 
   .pageone .text{
-    height:30%;
+    height:25%;
     width:100vw;
     display:flex;
     align-items: center;
@@ -223,7 +304,7 @@ li{
   }
 
   .pageone .link .blank{
-    height:50vw;
+    height:50%;
   }
 
 }
@@ -249,13 +330,9 @@ li{
   background-attachment: fixed;
   z-index:3;*/
 }
-.pagetwo a{
-  color: transparent;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:50vh;
-  width:50vw;
+
+.pagetwo .link .overlay{
+  background:#d38d77;
 }
 
 .pagetwo .decoration { /* These are values shared by all three layers. */
@@ -269,15 +346,6 @@ li{
   z-index:4;
 }
 
-@media only screen and (orientation: portrait){
-  .pagetwo .decoration {
-  background-size: 100vw;
-  }
-
-  .pagetwo .sandwich{
-  background-size: 60%;
-  }
-}
 .decoration.bottom {
   background-image: url("michealle-site/bottom-flowers.png");
   background-position: left bottom 3em;
@@ -288,6 +356,22 @@ li{
   background-position: right 3em;
   z-index: 5;
 }
+
+@media only screen and (orientation: portrait){
+  .pagetwo .decoration {
+  background-size: 100vw;
+  }
+
+  .pagetwo .background, .pagetwo .decoration{
+    background-attachment: scroll
+  }
+
+  .pagetwo .sandwich{
+  background-size: 60%;
+  }
+}
+
+
 
 /** PAGE THREE **/
 .pagethree{
@@ -319,10 +403,13 @@ li{
   bottom:0;
   background-size:cover;
   background-repeat:no-repeat;
-  background-position: center bottom 30px;
+  background-position: center bottom 3em;
   background-image: url("michealle-site/pine.png");
   z-index:5;
 
+}
+.pagethree .link .overlay{
+  background:#55551c;
 }
 
 @media only screen and (orientation: portrait){
@@ -330,14 +417,10 @@ li{
     height:70%;
     background-size:200vw;
   }*/
-}
 
-.pagethree a{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:50vh;
-  width:50vw;
+  .pagethree .background, .pagethree .frame{
+    background-attachment: scroll
+  }
 }
 
 /** PAGE FOUR **/
@@ -397,6 +480,7 @@ h1{
   font-style: normal;
   color: white;
   text-shadow:-1px -1px 1px rgb(39,52,33);
+  padding-bottom:1em;
 }
 hr{
   margin: .75em 0 1em 0;
@@ -404,7 +488,15 @@ hr{
   width: 1em;
   border:1px solid white;
 }
-
+p{
+  padding:1em 0;
+  max-width:500px;
+}
+@media only screen and (orientation: portrait){
+ .pagefour .background{
+    background-attachment: scroll;
+  }
+}
 
 
 
