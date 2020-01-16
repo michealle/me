@@ -3,6 +3,7 @@
   padding:0;
   box-sizing:border-box;
   scroll-behavior:smooth;
+  -ms-scroll-behavior:smooth;
 }
 
 .nav{
@@ -114,6 +115,10 @@ a{
   -ms-overflow-style: none;
   background:none;
   scroll-snap-align:start;
+  -ms-scroll-snap-align:start;
+  scroll-snap-stop: always;
+  scroll-snap-points-y: repeat(100%);
+  -ms-scroll-snap-points-y: repeat(100%);
 
   z-index: -1;
 
