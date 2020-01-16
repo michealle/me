@@ -467,10 +467,10 @@ p.info{
   height:100%;
   z-index: 10;
   text-align: center;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Poiret One', sans-serif;
   font-size:1em;
   line-height:1.8em;
-  letter-spacing:0.01em;
+  letter-spacing:0.05em;
   color: white;
   text-shadow:-1px -1px 1px rgba(39,52,33,.7);
 }
@@ -491,13 +491,13 @@ p.info{
 }
 h1{
   font-size:1.5em;
-  font-family: 'Poiret One', sans-serif;
-  letter-spacing:0.1em;
+  font-family: 'Josefin Sans', sans-serif;
+  letter-spacing:0em;
   font-weight:400;
   font-style: none;
   color: white;
   text-shadow:-1px -1px 1px rgb(39,52,33);
-  padding-bottom:1em;
+  padding-bottom:.5em;
 }
 hr{
   margin: .75em 0 1em 0;
@@ -508,7 +508,7 @@ hr{
 p{
   padding:1em 0;
   max-width:500px;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Poiret One', sans-serif;
   font-size:1em;
   line-height:1.8em;
   letter-spacing:0.01em;
