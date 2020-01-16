@@ -482,7 +482,8 @@ p.info{
   box-shadow:none;
   padding:0;
   margin:0;
-  
+  line-height: 1.5;
+  font-weight: normal
 }
 .pagefour a:hover{
   text-shadow:1px 1px 1px rgba(39,52,33,.7);
@@ -493,7 +494,7 @@ h1{
   font-family: 'Poiret One', sans-serif;
   letter-spacing:0.1em;
   font-weight:400;
-  font-style: normal;
+  font-style: none;
   color: white;
   text-shadow:-1px -1px 1px rgb(39,52,33);
   padding-bottom:1em;
@@ -518,80 +519,3 @@ p{
     background-attachment: scroll;
   }
 }
-
-
-
-
-
-.parallax-container { /* Parent element for all three layers */
-  height: 100vh;
-  width:100vw;
-  overflow-x: hidden; /* Restrict scroll movement with overflow */
-  overflow-y: scroll;
-  perspective: 100px;
-  position:absolute;
-
-  /* 
-    IMPORTANT! Parent's perspective property determines strength of perspective effect 
-  */
-}
-
-.layer { /* These are values shared by all three layers. */
-  position: absolute; /* Layer positioning is important */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height:100vh;
-  width:100vw;
-  background-position: center;
-
-  background-repeat: no-repeat;
-}
-
-.back {
-  transform: translateZ(-100px) scale(2);
-  /* 
-    IMPORTANT! 
-      TranslateZ: TranslateZ pushes layer back so it scrolls slower and appears 
-      farther away. 
-      
-      Scale: Scale will scale layer back up to fit screen while retaining 
-      perspective effect. The value of scale depends on the values of 
-      perspective (see parent element above) and translateZ (for the given 
-      layer). The formula is: 
-        ((translateZ * -1) / perspective) + 1 
-  */
-  background-image: url("michealle-site/circle-bg.png");
-  background-size:contain;
-  background-attachment: fixed;
-}
-
-.midd {
-  transform: translateZ(-50px) scale(1.5);
-  /* Here, the translateZ value is closer to foreground value than background
-  value, so the midground will seem to be pretty close to the foreground
-  and will scroll pretty fast.  */
-  background-image: url("michealle-site/byanihan1.png");
-  background-size:contain;
-}
-
-.fore {
-  transform: translateZ(0) scale(1);
-  /* Zero value for translateZ property makes foreground scroll normally.
-  No scale value is needed because this layer is not translated.
-  NOTE: TranslateZ value can be greater than 0 for extreme foreground. */
-  background-image: url("img/mountain.png");
-  background-size:cover;  
-  top:80%;
-}
-
-
-
-
-
-
-
-
-
-/* Learn more about CSS parallax: http://keithclark.co.uk/articles/pure-css-parallax-websites/ */
