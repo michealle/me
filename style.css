@@ -43,9 +43,7 @@ li{
   font-size:1em;
 }
 
-a{
-  transition:0.3s ease-in-out;
-}
+
 
 .nav a, .footer a{
   display:flex;
@@ -158,23 +156,24 @@ p.info{
   text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
 }
 
+
+
 .overlay{
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   position:absolute;
-  top:10%;
   box-sizing:border-box;
   text-shadow:none;
-  height:30px;
-  width:30px;
-  transition:.5s;
-  z-index:200;
-  overflow-y:hidden;
+  z-index:999;
   font-size:1em;
-  line-height:1;
-  opacity:0;
+  line-height:1.5;
+  padding:3em 10%;
+  min-height:calc(100% - 6em);
+  width:100%;
+  overflow-y:scroll;
+  top:3em;;
 }
 .overlay h1{
   font-family: 'Monoton', sans-serif;
@@ -193,6 +192,7 @@ p.info{
   box-shadow:none;
   position:relative;
   display:inline-block;
+  z-index: 1000;
 }
 .overlay a::after{
   position:absolute;
@@ -205,16 +205,6 @@ p.info{
   transition: transform 0.3s ease-in-out;
   transform:scaleX(0);
 }
-.overlay:hover{
-  font-size:1em;
-  line-height:1.5;
-  padding:10%;
-  top:3em;
-  opacity:1;
-  height:calc(100% - 6em);
-  width:100%;
-  overflow-y:scroll;
-}
 .overlay a:hover::after{
   transform:scaleX(1);
   transform-origin:left;
@@ -226,9 +216,12 @@ p.info{
     }
 }
 
+
+
+
 /** PAGE ONE **/
 .pageone{
-  z-index: 100
+  z-index: 100;
 }
 .pageone .background{
   background-image: url("michealle-site/circle-bg.png");
@@ -246,6 +239,21 @@ p.info{
   background-attachment: fixed;
   z-index:3;
 }
+.pageone .decoration{
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:flex-end;
+  box-sizing:border-box;
+  height:100%;
+  width:100%;
+  position:absolute;
+}
+.pageone .decoration .text{
+  margin-bottom:calc(50px + 5%);
+  padding:0;
+  text-align: center;
+}
 .pageone .link{
   display:flex;
   flex-direction:row;
@@ -256,9 +264,7 @@ p.info{
   height:calc(100% - 6em)!important;
   box-sizing:border-box;
 }
-.pageone .text{
-  padding:5vh 1em;
-}
+
 .pageone h1{
   font-family: 'Monoton', sans-serif;
   font-weight:400;
@@ -269,45 +275,101 @@ p.info{
   letter-spacing:0.1em;
   text-shadow:none;
 }
-.pageone .blank{
-  height:50vh;
-  width:35%;
-}
-.pageone .blank a{
-  width:100%;
-  height:100%;
-}
-.pageone a{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:rgb(175,186,176);
-  text-shadow:-1px -1px 1px rgba(39,52,33,.7);
-  text-decoration: none;
-  box-shadow:none;
-  padding:0;
-  margin:0;
-}
-.pageone a:hover{
-  text-shadow:1px 1px 1px rgba(39,52,33,.7);
-  box-shadow:none;
-  color:white;
-}
 
 .pageone .link .overlay{
   background:#cf9229;
-  top:calc(10% - 37px);
-}
-.pageone .link .overlay:hover{
-  height:100%;
-  width:100%;
   top:0;
+  min-height:100%;
 }
+
 .pageone .link .overlay h1,.pageone .link .overlay a{
   color:white;
   text-shadow:none;
   display:inline-block;
 }
+
+#overlay {
+  height: 100%;
+  width: 100%;
+  padding:0;
+  z-index: 999;
+  visibility: hidden;
+  position: absolute;
+  box-sizing: border-box;
+}
+#overlay.active {
+  visibility: visible;
+}
+#overlay-input{
+  position:absolute;
+}
+#overlay-button {
+  position: absolute;
+  left: calc(50% - 34px / 2);
+  top: 10%;
+  padding: 16px 8px;
+  z-index: 1000;
+  cursor: pointer;
+  user-select: none;
+  background: rgb(175,186,176);
+  border: thin solid white;
+  border-radius: 100em;
+}
+#overlay-button span {
+  height: 2px;
+  width: 18px;
+  border-radius: 2px;
+  background-color: white;
+  position: relative;
+  display: block;
+  transition: all 0.2s ease-in-out;
+  visibility: hidden;
+}
+#overlay-button span:after {
+  height: 18px;
+  width: 2px;
+  top: calc(-16px / 2);
+  left: calc(16px / 2);
+  border-radius: 2px;
+  background-color: white;
+  position: absolute;
+  content: "";
+  transition: all 0.2s ease-in-out;
+  visibility: visible;
+}
+#overlay-button span:before {
+  top: 0px;
+  visibility: visible;
+  height: 2px;
+  width: 18px;
+  border-radius: 2px;
+  background-color: white;
+  position: absolute;
+  content: "";
+  transition: all 0.2s ease-in-out;
+}
+#overlay-button:hover span, #overlay-button:hover span:before, #overlay-button:hover span:after {
+  background: rgb(39,52,33);
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox]:checked ~ #overlay {
+  visibility: visible;
+}
+
+input[type=checkbox]:checked ~ #overlay-button:hover, input[type=checkbox]:checked ~ #overlay-button{
+  opacity:0.5;
+}
+input[type=checkbox]:checked ~ #overlay-button span:before {
+  transform: rotate(-45deg);
+}
+input[type=checkbox]:checked ~ #overlay-button span:after {
+  transform: rotate(-45deg);
+}
+
 
 @media only screen and (orientation: portrait){
   .pageone .background, .pageone .frame{
@@ -317,7 +379,6 @@ p.info{
     display:flex;
     height:100%;
   }
-
 
   .pageone .link .blank{
     height:50%;
@@ -373,6 +434,91 @@ p.info{
   z-index: 5;
 }
 
+#overlay2 {
+  height: 100%;
+  width: 100%;
+  padding:0;
+  z-index: 999;
+  visibility: hidden;
+  position: absolute;
+  box-sizing: border-box;
+}
+#overlay2.active {
+  visibility: visible;
+}
+#overlay2-input{
+  position:absolute;
+}
+#overlay2-button {
+  position: absolute;
+  left: calc(50% - 34px / 2);
+  top: 10%;
+  padding: 16px 8px;
+  z-index: 1000;
+  cursor: pointer;
+  user-select: none;
+  background: rgb(175,186,176);
+  border-radius: 100em;
+  border:thin solid white;
+}
+#overlay2-button span {
+  height: 2px;
+  width: 18px;
+  border-radius: 2px;
+  background-color: white;
+  position: relative;
+  display: block;
+  transition: all 0.2s ease-in-out;
+  visibility: hidden;
+  background: pink;
+}
+#overlay2-button span:after {
+  height: 18px;
+  width: 2px;
+  top: calc(-16px / 2);
+  left: calc(16px / 2);
+  border-radius: 2px;
+  background-color: white;
+  position: absolute;
+  content: "";
+  transition: all 0.2s ease-in-out;
+  visibility: visible;
+}
+#overlay2-button span:before {
+  top: 0px;
+  visibility: visible;
+  height: 2px;
+  width: 18px;
+  border-radius: 2px;
+  background-color: white;
+  position: absolute;
+  content: "";
+  transition: all 0.2s ease-in-out;
+}
+#overlay2-button:hover span, #overlay2-button:hover span:before, #overlay2-button:hover span:after {
+  background: rgb(39,52,33);
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox]:checked ~ #overlay2 {
+  visibility: visible;
+}
+
+input[type=checkbox]:checked ~ #overlay2-button:hover, input[type=checkbox]:checked ~ #overlay2-button{
+  opacity:0.5;
+}
+input[type=checkbox]:checked ~ #overlay2-button span:before {
+  transform: rotate(-45deg);
+  opacity: 1;
+}
+input[type=checkbox]:checked ~ #overlay2-button span:after {
+  transform: rotate(-45deg);
+}
+
+
 @media only screen and (orientation: portrait){
   .pagetwo .decoration {
   background-size: 100vw;
@@ -427,6 +573,93 @@ p.info{
 .pagethree .link .overlay{
   background:#55551c;
 }
+
+#overlay3 {
+  height: 100%;
+  width: 100%;
+  padding:0;
+  z-index: 999;
+  visibility: hidden;
+  position: absolute;
+  box-sizing: border-box;
+}
+#overlay3.active {
+  visibility: visible;
+}
+#overlay3-input{
+  position:absolute;
+}
+#overlay3-button {
+  position: absolute;
+  left: calc(50% - 34px / 2);
+  top: 10%;
+  padding: 16px 8px;
+  z-index: 1000;
+  cursor: pointer;
+  user-select: none;
+  background: rgb(175,186,176);
+  border:thin solid white;
+  border-radius: 100em;
+}
+
+#overlay3-button span {
+  height: 2px;
+  width: 18px;
+  border-radius: 2px;
+  background-color: white;
+  position: relative;
+  display: block;
+  transition: all 0.2s ease-in-out;
+  visibility: hidden;
+  background: pink;
+}
+#overlay3-button span:after {
+  height: 18px;
+  width: 2px;
+  top: calc(-16px / 2);
+  left: calc(16px / 2);
+  border-radius: 2px;
+  background-color: white;
+  position: absolute;
+  content: "";
+  transition: all 0.2s ease-in-out;
+  visibility: visible;
+}
+#overlay3-button span:before {
+  top: 0px;
+  visibility: visible;
+  height: 2px;
+  width: 18px;
+  border-radius: 2px;
+  background-color: white;
+  position: absolute;
+  content: "";
+  transition: all 0.2s ease-in-out;
+}
+#overlay3-button:hover span, #overlay3-button:hover span:before, #overlay3-button:hover span:after {
+  background:rgb(39,52,33);
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox]:checked ~ #overlay3 {
+  visibility: visible;
+}
+
+input[type=checkbox]:checked ~ #overlay3-button:hover, input[type=checkbox]:checked ~ #overlay3-button{
+  opacity:0.5;
+}
+input[type=checkbox]:checked ~ #overlay3-button span:before {
+  transform: rotate(-45deg);
+  opacity: 1;
+}
+input[type=checkbox]:checked ~ #overlay3-button span:after {
+  transform: rotate(-45deg);
+}
+
+
 
 @media only screen and (orientation: portrait){
   /*.pagethree .decoration{
@@ -500,7 +733,7 @@ h1{
   padding-bottom:.5em;
 }
 hr{
-  margin: .75em 0 1em 0;
+  margin: .1em 0 .1em 0;
   color: white;
   width: 1em;
   border:1px solid white;
