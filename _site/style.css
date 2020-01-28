@@ -305,9 +305,9 @@ p.info{
 }
 #overlay-button {
   position: absolute;
-  left: calc(50% - 34px / 2);
+  left: calc(50% - 28px / 2);
   top: 10%;
-  padding: 16px 8px;
+  padding: 13px 8px;
   z-index: 1000;
   cursor: pointer;
   user-select: none;
@@ -317,7 +317,7 @@ p.info{
 }
 #overlay-button span {
   height: 2px;
-  width: 18px;
+  width: 12px;
   border-radius: 2px;
   background-color: white;
   position: relative;
@@ -326,10 +326,10 @@ p.info{
   visibility: hidden;
 }
 #overlay-button span:after {
-  height: 18px;
+  height: 12px;
   width: 2px;
-  top: calc(-16px / 2);
-  left: calc(16px / 2);
+  top: calc(-10px / 2);
+  left: calc(10px / 2);
   border-radius: 2px;
   background-color: white;
   position: absolute;
@@ -341,7 +341,7 @@ p.info{
   top: 0px;
   visibility: visible;
   height: 2px;
-  width: 18px;
+  width: 12;
   border-radius: 2px;
   background-color: white;
   position: absolute;
@@ -451,9 +451,9 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
 }
 #overlay2-button {
   position: absolute;
-  left: calc(50% - 34px / 2);
+  left: calc(50% - 28px / 2);
   top: 10%;
-  padding: 16px 8px;
+  padding: 13px 8px;
   z-index: 1000;
   cursor: pointer;
   user-select: none;
@@ -463,7 +463,7 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
 }
 #overlay2-button span {
   height: 2px;
-  width: 18px;
+  width: 12px;
   border-radius: 2px;
   background-color: white;
   position: relative;
@@ -473,10 +473,10 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
   background: pink;
 }
 #overlay2-button span:after {
-  height: 18px;
+  height: 12px;
   width: 2px;
-  top: calc(-16px / 2);
-  left: calc(16px / 2);
+  top: calc(-10px / 2);
+  left: calc(10px / 2);
   border-radius: 2px;
   background-color: white;
   position: absolute;
@@ -488,7 +488,7 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
   top: 0px;
   visibility: visible;
   height: 2px;
-  width: 18px;
+  width: 12px;
   border-radius: 2px;
   background-color: white;
   position: absolute;
@@ -591,9 +591,9 @@ input[type=checkbox]:checked ~ #overlay2-button span:after {
 }
 #overlay3-button {
   position: absolute;
-  left: calc(50% - 34px / 2);
+  left: calc(50% - 28px / 2);
   top: 10%;
-  padding: 16px 8px;
+  padding: 13px 8px;
   z-index: 1000;
   cursor: pointer;
   user-select: none;
@@ -604,7 +604,7 @@ input[type=checkbox]:checked ~ #overlay2-button span:after {
 
 #overlay3-button span {
   height: 2px;
-  width: 18px;
+  width: 12px;
   border-radius: 2px;
   background-color: white;
   position: relative;
@@ -614,10 +614,10 @@ input[type=checkbox]:checked ~ #overlay2-button span:after {
   background: pink;
 }
 #overlay3-button span:after {
-  height: 18px;
+  height: 12px;
   width: 2px;
-  top: calc(-16px / 2);
-  left: calc(16px / 2);
+  top: calc(-10px / 2);
+  left: calc(10px / 2);
   border-radius: 2px;
   background-color: white;
   position: absolute;
@@ -629,7 +629,7 @@ input[type=checkbox]:checked ~ #overlay2-button span:after {
   top: 0px;
   visibility: visible;
   height: 2px;
-  width: 18px;
+  width: 12px;
   border-radius: 2px;
   background-color: white;
   position: absolute;
