@@ -131,7 +131,7 @@ li{
   position:absolute;
   height:100%;
   width:100%;
-  background-size: 100vh;
+  background-size: 90vh;
   background-position:center center;
   background-repeat:no-repeat;
 }
@@ -250,9 +250,17 @@ p.info{
   position:absolute;
 }
 .pageone .decoration .text{
-  margin-bottom:calc(50px + 5%);
-  padding:0;
+  position: absolute;
+  padding:0 3em;
+  box-sizing:border-box;
+  flex-direction:column;
+  height:20%;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  bottom:1.5em;
   text-align: center;
+  z-index:10;
 }
 .pageone .link{
   display:flex;
@@ -306,7 +314,7 @@ p.info{
 #overlay-button {
   position: absolute;
   left: calc(50% - 28px / 2);
-  top: 10%;
+  top: calc(3em + 5%);
   padding: 13px 8px;
   z-index: 1000;
   cursor: pointer;
@@ -379,11 +387,6 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
     display:flex;
     height:100%;
   }
-
-  .pageone .link .blank{
-    height:50%;
-  }
-
 }
 
 
@@ -452,7 +455,7 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
 #overlay2-button {
   position: absolute;
   left: calc(50% - 28px / 2);
-  top: 10%;
+  top: calc(3em + 5%);
   padding: 13px 8px;
   z-index: 1000;
   cursor: pointer;
@@ -592,7 +595,7 @@ input[type=checkbox]:checked ~ #overlay2-button span:after {
 #overlay3-button {
   position: absolute;
   left: calc(50% - 28px / 2);
-  top: 10%;
+  top: calc(3em + 5%);
   padding: 13px 8px;
   z-index: 1000;
   cursor: pointer;
