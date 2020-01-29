@@ -158,6 +158,17 @@ p.info{
 }
 
 
+.decoration{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.decoration a{
+  display:flex;
+  justify-content:center;
+  width:40vh;
+  height:40vh;
+}
 
 .overlay{
   display:flex;
@@ -236,10 +247,21 @@ p.info{
   z-index:2;
 }
 
+.pageone .frame a{
+  z-index:5;
+  display:flex;
+  justify-content:center;
+  width:40vh;
+  height:40vh;
+}
+
 .pageone .frame{
   background-image: url("michealle-site/border2.png");
   background-attachment: fixed;
-  z-index:3;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:4;
 }
 .pageone .decoration{
   display:flex;
@@ -253,6 +275,8 @@ p.info{
 }
 .pageone .decoration .text{
   position: absolute;
+  left:0;
+  right:0;
   padding:0 3em;
   box-sizing:border-box;
   flex-direction:column;
@@ -262,7 +286,7 @@ p.info{
   justify-content:center;
   bottom:1.5em;
   text-align: center;
-  z-index:10;
+  z-index:4;
 }
 .pageone .link{
   display:flex;
@@ -299,7 +323,7 @@ p.info{
 }
 
 #overlay {
-  height: 100%;
+  height: 0%;
   width: 100%;
   padding:0;
   z-index: 999;
@@ -309,6 +333,7 @@ p.info{
   top:-100%;
   left:0;
   right:0;
+  font-size:0em;
 }
 #overlay.active {
   visibility: visible;
@@ -326,6 +351,7 @@ p.info{
   user-select: none;
   background: rgb(175,186,176);
   border: thin solid white;
+  box-shadow: 1px 1px 2px rgba(255,255,255,1);
   border-radius: 100em;
 }
 #overlay-button span {
@@ -365,6 +391,11 @@ p.info{
   background: rgb(39,52,33);
 }
 
+#overlay-button:hover{
+  border:thin solid rgba(175,186,176,1);
+  box-shadow:-1px -1px 3px rgba(39,52,33,1);
+}
+
 input[type=checkbox] {
   display: none;
 }
@@ -372,11 +403,14 @@ input[type=checkbox] {
 input[type=checkbox]:checked ~ #overlay {
   visibility: visible;
   top:0;
-  transition: 0.3s ease-in-out;
+  height:100%;
+  font-size:1em;
+  transition: .5s ease-in-out;
 }
 
 input[type=checkbox]:checked ~ #overlay-button:hover, input[type=checkbox]:checked ~ #overlay-button{
   opacity:0.5;
+  box-shadow: none;
 }
 input[type=checkbox]:checked ~ #overlay-button span:before {
   transform: rotate(-45deg);
@@ -436,12 +470,12 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
 .decoration.bottom {
   background-image: url("michealle-site/bottom-flowers.png");
   background-position: left bottom 3em;
-  z-index: 5;
+  z-index: 4;
 }
 .decoration.top {
   background-image: url("michealle-site/top-flowers.png");
   background-position: right 3em;
-  z-index: 5;
+  z-index: 4;
 }
 
 #overlay2 {
@@ -455,6 +489,7 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
   top:-100%;
   left:0;
   right:0;
+  font-size:0;
 }
 #overlay2.active {
   visibility: visible;
@@ -472,7 +507,8 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
   user-select: none;
   background: rgb(175,186,176);
   border-radius: 100em;
-  border:thin solid white;
+  border: thin solid white;
+  box-shadow: 1px 1px 2px rgba(255,255,255,0.8);
 }
 #overlay2-button span {
   height: 2px;
@@ -511,7 +547,10 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
 #overlay2-button:hover span, #overlay2-button:hover span:before, #overlay2-button:hover span:after {
   background: rgb(39,52,33);
 }
-
+#overlay2-button:hover{
+  border:thin solid rgba(175,186,176,1);
+  box-shadow:-1px -1px 3px rgba(39,52,33,.8);
+}
 input[type=checkbox] {
   display: none;
 }
@@ -519,11 +558,14 @@ input[type=checkbox] {
 input[type=checkbox]:checked ~ #overlay2 {
   visibility: visible;
   top:0;
-  transition: 0.3s ease-in-out;
+  height:100%;
+  font-size:1em;
+  transition: .5s ease-in-out;
 }
 
 input[type=checkbox]:checked ~ #overlay2-button:hover, input[type=checkbox]:checked ~ #overlay2-button{
   opacity:0.5;
+  box-shadow: none;
 }
 input[type=checkbox]:checked ~ #overlay2-button span:before {
   transform: rotate(-45deg);
@@ -574,17 +616,17 @@ input[type=checkbox]:checked ~ #overlay2-button span:after {
 
 .pagethree .decoration{
   box-sizing:border-box;
-  height:60%;
+  height:100%;
   min-width:100%;
   position:absolute;
   bottom:0;
-  background-size:cover;
+  background-size:auto 60%;
   background-repeat:no-repeat;
   background-position: center bottom 3em;
   background-image: url("michealle-site/pine.png");
-  z-index:5;
-
+  z-index:4;
 }
+
 .pagethree .link .overlay{
   background:#55551c;
 }
@@ -600,6 +642,7 @@ input[type=checkbox]:checked ~ #overlay2-button span:after {
   top:-100%;
   left:0;
   right:0;
+  font-size: 0;
 }
 #overlay3.active {
   visibility: visible;
@@ -616,7 +659,8 @@ input[type=checkbox]:checked ~ #overlay2-button span:after {
   cursor: pointer;
   user-select: none;
   background: rgb(175,186,176);
-  border:thin solid white;
+  border: thin solid white;
+  box-shadow: 1px 1px 2px rgba(255,255,255,0.8);
   border-radius: 100em;
 }
 
@@ -657,7 +701,10 @@ input[type=checkbox]:checked ~ #overlay2-button span:after {
 #overlay3-button:hover span, #overlay3-button:hover span:before, #overlay3-button:hover span:after {
   background:rgb(39,52,33);
 }
-
+#overlay3-button:hover{
+  border:thin solid rgba(175,186,176,1);
+  box-shadow:-1px -1px 3px rgba(39,52,33,1);
+}
 input[type=checkbox] {
   display: none;
 }
@@ -665,11 +712,14 @@ input[type=checkbox] {
 input[type=checkbox]:checked ~ #overlay3 {
   visibility: visible;
   top:0;
-  transition: 0.3s ease-in-out;
+  height:100%;
+  font-size:1em;
+  transition: .5s ease-in-out;
 }
 
 input[type=checkbox]:checked ~ #overlay3-button:hover, input[type=checkbox]:checked ~ #overlay3-button{
   opacity:0.5;
+  box-shadow: none;
 }
 input[type=checkbox]:checked ~ #overlay3-button span:before {
   transform: rotate(-45deg);
@@ -753,7 +803,7 @@ h1{
   padding-bottom:.5em;
 }
 hr{
-  margin: .1em 0 .1em 0;
+  margin: .1em auto .1em auto;
   color: white;
   width: 1em;
   border:1px solid white;
