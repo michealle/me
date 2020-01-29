@@ -164,6 +164,7 @@ p.info{
   justify-content:center;
   align-items:center;
   position:absolute;
+  left:0;
   box-sizing:border-box;
   text-shadow:none;
   z-index:999;
@@ -304,6 +305,7 @@ p.info{
   visibility: hidden;
   position: absolute;
   box-sizing: border-box;
+  left:0;
 }
 #overlay.active {
   visibility: visible;
