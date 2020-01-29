@@ -305,7 +305,9 @@ p.info{
   visibility: hidden;
   position: absolute;
   box-sizing: border-box;
+  top:-100%;
   left:0;
+  right:0;
 }
 #overlay.active {
   visibility: visible;
@@ -368,6 +370,8 @@ input[type=checkbox] {
 
 input[type=checkbox]:checked ~ #overlay {
   visibility: visible;
+  top:0;
+  transition: 0.3s ease-in-out;
 }
 
 input[type=checkbox]:checked ~ #overlay-button:hover, input[type=checkbox]:checked ~ #overlay-button{
@@ -447,6 +451,9 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
   visibility: hidden;
   position: absolute;
   box-sizing: border-box;
+  top:-100%;
+  left:0;
+  right:0;
 }
 #overlay2.active {
   visibility: visible;
@@ -510,6 +517,8 @@ input[type=checkbox] {
 
 input[type=checkbox]:checked ~ #overlay2 {
   visibility: visible;
+  top:0;
+  transition: 0.3s ease-in-out;
 }
 
 input[type=checkbox]:checked ~ #overlay2-button:hover, input[type=checkbox]:checked ~ #overlay2-button{
@@ -587,6 +596,9 @@ input[type=checkbox]:checked ~ #overlay2-button span:after {
   visibility: hidden;
   position: absolute;
   box-sizing: border-box;
+  top:-100%;
+  left:0;
+  right:0;
 }
 #overlay3.active {
   visibility: visible;
@@ -651,6 +663,8 @@ input[type=checkbox] {
 
 input[type=checkbox]:checked ~ #overlay3 {
   visibility: visible;
+  top:0;
+  transition: 0.3s ease-in-out;
 }
 
 input[type=checkbox]:checked ~ #overlay3-button:hover, input[type=checkbox]:checked ~ #overlay3-button{
