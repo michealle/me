@@ -294,13 +294,17 @@ input[type=checkbox]:checked ~ .overlay-button span:after {
   z-index: 100;
 }
 .content{
+  position:absolute;
   height:100%;
   width:100%;
-  position: absolute;
+  background-size: 90vh;
   background-position:center center;
   background-repeat:no-repeat;
-  background-size: contain;
-  -webkit-background-size: contain;
+}
+@media only screen and (orientation: portrait){
+  .content{
+    background-size: 120vw;
+    }
 }
 hr{
   margin: .1em auto .1em auto;
@@ -397,11 +401,15 @@ input[type=checkbox]:checked ~ #overlay {
   top:0;
   bottom:0;
   position:absolute;
+  background-size:100vh;
   background-repeat:no-repeat;
   background-attachment: fixed;
   z-index:4;
-  background-size: contain;
-  -webkit-background-size:contain;
+}
+@media only screen and (orientation: portrait){
+  #one .decoration {
+  background-size: 120vw;
+  }
 }
 #one .decoration.bottom {
   background-image: url("michealle-site/bottom-flowers.png");
