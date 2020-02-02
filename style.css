@@ -390,8 +390,9 @@ input[type=checkbox]:checked ~ #overlay {
 }
 #one .decoration { /* These are values shared by all three layers. */
   box-sizing:border-box;
-  height:100%;
   width:100%;
+  top:0;
+  bottom:0;
   position:absolute;
   background-repeat:no-repeat;
   background-attachment: fixed;
@@ -400,12 +401,12 @@ input[type=checkbox]:checked ~ #overlay {
 }
 #one .decoration.bottom {
   background-image: url("michealle-site/bottom-flowers.png");
-  background-position: left bottom 3em;
+  background-position: left bottom;
   z-index: 4;
 }
 #one .decoration.top {
   background-image: url("michealle-site/top-flowers.png");
-  background-position: right top 3em;
+  background-position: right top;
   z-index: 4;
 }
 #overlay2{
