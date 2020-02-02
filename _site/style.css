@@ -1,52 +1,35 @@
-*, html, body{
+body {
   margin:0;
   padding:0;
-  box-sizing:border-box;
-  scroll-behavior:smooth;
-  -ms-scroll-behavior:smooth;
-  -webkit-overflow-scrolling:touch
-}
-
-.nav{
-  width:100vw;
-  height:3em;
-  padding:.25em;
-  background:rgb(39,52,33);
-  display:flex;
-  justify-content:center;
-  position:fixed;
-  bottom:0;
-  box-sizing:border-box;
-  z-index: 1000
-}
-
-ul{
-  box-sizing:border-box;
-  list-style-type:none;
-  display:flex;
-  justify-content:space-around;
-  align-items:center;
-  width:calc(100%);
-  height:100%;
-}
-
-li{
-  height:100%;
-  float:left;
-  align-items:center;
-  justify-content:center;
-  display:flex;
-  margin:0 .125em;
-  flex:1;
-  background:rgb(72,82,63);
-
   font-family: "Josefin Sans", sans-serif;
   font-size:1em;
 }
-
-
-
-.nav a, .footer a{
+code {
+  background: transparent;
+  font-weight: bold;
+}
+h1 {
+  font-family: 'Monoton', sans-serif;
+  font-weight:400;
+  font-style:normal;
+  font-size:2em;
+  color:rgb(175,186,176);
+  line-height: 1.2;
+  letter-spacing:0.1em;
+  text-shadow:none;
+  text-align: center
+}
+* {
+  box-sizing: border-box;
+  scroll-behavior:smooth;
+  -webkit-scroll-behavior:smooth;
+  -ms-scroll-behavior:smooth;
+  -webkit-overflow-scrolling:touch
+}
+::-webkit-scrollbar{
+  display:none;
+}
+.contact a, footer a{
   display:flex;
   flex-grow:1;
   flex-shrink:1;
@@ -57,136 +40,90 @@ li{
   text-decoration: none;
   box-shadow:-1px -1px 2px rgba(175,186,176,.7);
   text-shadow:-1px -1px 1px rgb(39,52,33);
+  background:rgb(72,82,63);
 }
-
-.nav a:hover, .footer a:hover{
+.contact a:hover, footer a:hover{
   text-shadow:1px 1px 1px rgb(39,52,33);
   box-shadow:1px 1px 2px rgba(175,186,176,.7);
 }
-
-.footer{
-  width:100vw;
+footer{
+  width:100%;
   height:3em;
   padding:.25em .125em;
   background:rgb(39,52,33);
   display:flex;
   justify-content:center;
+  align-items:center;
+  position:fixed;
+  bottom:0;
+  z-index: 200;
+}
+.nav{
+  height:100%;
+  width:100%;
+}
+ul{
+  list-style-type:none;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  padding:0;
+  margin:0;
+  height: 100%
+}
+li{
+  float:left;
+  align-items:center;
+  justify-content:center;
+  display:flex;
+  margin:0 .125em;
+  flex:1;
+  background:rgb(72,82,63);
+  height: 100%
+}
+.contact{
   position:fixed;
   top:0;
-  box-sizing:border-box;
-  z-index: 1000
-}
-
-.test{
-  height:100vh;
-  width:100vw;
-  position: fixed;
-  background-image:url("michealle-site/background.png");
-  background-size:contain;
-  z-index:-100;
-}
-/*******************/
-.wrapper { /* Parent element for all three layers */
-  height: 100vh;
-  width:100vw;
-  position: absolute;
-  box-sizing:border-box;
-  overflow-x: hidden; /* Restrict scroll movement with overflow */
-  overflow-y: scroll;
-  -ms-overflow-style: none;
-  scroll-snap-type: y mandatory;
-  -ms-scroll-snap-type: y mandatory;
-  -webkit-overflow-scrolling: touch; /* Needed to work on iOS Safari */
-}
-
-
-.wrapper::-webkit-scrollbar {
-  display: none;
-  }
-
-.page {
-  box-sizing:border-box;
-  height:100%;
   width:100%;
-  position:relative;
-  background-size:100%;
-  overflow-y:scroll;
-  -ms-overflow-style: none;
-  background:none;
-  scroll-snap-align:start;
-  -ms-scroll-snap-align:start;
-  scroll-snap-stop: always;
-  scroll-snap-points-y: repeat(100%);
-  -ms-scroll-snap-points-y: repeat(100%);
-
-  z-index: -1;
-
+  height:3em;
+  padding:.25em;
 }
-
-.page::-webkit-scrollbar {
-  display: none;
-  }
-
-.content{
-  box-sizing:border-box;
-  position:absolute;
-  height:100%;
-  width:100%;
-  background-size: 90vh;
-  background-position:center center;
-  background-repeat:no-repeat;
-}
-p.info{
-  position: absolute;
-  top:10%;
-  display: inline-block;
-  text-align:center;
-  width:2em;
-  height:2em;
-  padding:.5em;
-  font-size:1em;
-  line-height: 1;
-  border-radius: 2em;
-  margin-left:calc(50% - 1em);
-  font-family:Georgia, serif;
-  font-weight:bold;
-  box-shadow:-1px -1px 2px rgba(0,0,0,0.8);
-  background:rgb(72,82,63);
+p{
+  max-width:500px;
   color:white;
-  border:1px solid rgb(39,52,33);
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
 }
-
-
-.decoration{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-.decoration a{
-  display:flex;
-  justify-content:center;
-  width:40vh;
-  height:40vh;
-}
+/*----------------------------------------------
+------------------------------------------------*/
 
 .overlay{
   display:flex;
+  position:absolute;
+  height:0;
+  top:-100%;
+  left:0;
+  right:0;
+  font-size:0; 
+  padding:3em 10%;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  position:absolute;
-  left:0;
   box-sizing:border-box;
+  text-align: center;
   text-shadow:none;
   z-index:999;
   font-size:1em;
   line-height:1.5;
-  padding:3em 10%;
   min-height:calc(100% - 6em);
-  width:100%;
-  overflow-y:scroll;
-  top:3em;;
+  visibility:hidden;
+}
+.overlay:-webkit-scrollbar {
+  display: none !important;
+  }
+.overlay.active{
+  top:3em;
+  bottom:3em;
+  font-size:auto;
+  visibility:visible;
 }
 .overlay h1{
   font-family: 'Monoton', sans-serif;
@@ -205,7 +142,7 @@ p.info{
   box-shadow:none;
   position:relative;
   display:inline-block;
-  z-index: 1000;
+  z-index: 200;
 }
 .overlay a::after{
   position:absolute;
@@ -223,128 +160,13 @@ p.info{
   transform-origin:left;
 }
 
-@media only screen and (orientation: portrait){
-  .content{
-    background-size: 120vw;
-    }
-}
-
-
-
-
-/** PAGE ONE **/
-.pageone{
-  z-index: 100;
-}
-.pageone .background{
-  background-image: url("michealle-site/circle-bg.png");
-  background-attachment: fixed;
-  z-index:0;    
-}
-
-.pageone .sandwich{
-  background-image: url("michealle-site/me.png");
-  z-index:2;
-}
-
-.pageone .frame a{
-  z-index:5;
-  display:flex;
-  justify-content:center;
-  width:40vh;
-  height:40vh;
-}
-
-.pageone .frame{
-  background-image: url("michealle-site/border2.png");
-  background-attachment: fixed;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index:4;
-}
-.pageone .decoration{
-  display:flex;
-  flex-direction:row;
-  justify-content:center;
-  align-items:flex-end;
-  box-sizing:border-box;
-  height:100%;
-  width:100%;
+.overlay-input{
   position:absolute;
 }
-.pageone .decoration .text{
-  position: absolute;
-  left:0;
-  right:0;
-  padding:0 3em;
-  box-sizing:border-box;
-  flex-direction:column;
-  height:20%;
-  display: flex;
-  align-items:center;
-  justify-content:center;
-  bottom:1.5em;
-  text-align: center;
-  z-index:4;
-}
-.pageone .link{
-  display:flex;
-  flex-direction:row;
-  justify-content:center;
-  align-items:flex-end;
-  width:100%;
-  margin-top:3em;
-  height:calc(100% - 6em)!important;
-  box-sizing:border-box;
-}
-
-.pageone h1{
-  font-family: 'Monoton', sans-serif;
-  font-weight:400;
-  font-style:normal;
-  font-size:2em;
-  color:rgb(175,186,176);
-  line-height: 1.2;
-  letter-spacing:0.1em;
-  text-shadow:none;
-}
-
-.pageone .link .overlay{
-  background:#cf9229;
-  top:0;
-  min-height:100%;
-}
-
-.pageone .link .overlay h1,.pageone .link .overlay a{
-  color:white;
-  text-shadow:none;
-  display:inline-block;
-}
-
-#overlay {
-  height: 0%;
-  width: 100%;
-  padding:0;
-  z-index: 999;
-  visibility: hidden;
-  position: absolute;
-  box-sizing: border-box;
-  top:-100%;
-  left:0;
-  right:0;
-  font-size:0em;
-}
-#overlay.active {
-  visibility: visible;
-}
-#overlay-input{
-  position:absolute;
-}
-#overlay-button {
+.overlay-button {
   position: absolute;
   left: calc(50% - 28px / 2);
-  top: calc(3em + 5%);
+  top: 5%;
   padding: 13px 8px;
   z-index: 1000;
   cursor: pointer;
@@ -354,7 +176,7 @@ p.info{
   box-shadow: 1px 1px 0px rgba(150,160,150,.8);
   border-radius: 100em;
 }
-#overlay-button span {
+.overlay-button span {
   height: 2px;
   width: 12px;
   border-radius: 2px;
@@ -364,7 +186,7 @@ p.info{
   transition: all 0.2s ease-in-out;
   visibility: hidden;
 }
-#overlay-button span:after {
+.overlay-button span:after {
   height: 12px;
   width: 2px;
   top: calc(-10px / 2);
@@ -376,7 +198,7 @@ p.info{
   transition: all 0.2s ease-in-out;
   visibility: visible;
 }
-#overlay-button span:before {
+.overlay-button span:before {
   top: 0px;
   visibility: visible;
   height: 2px;
@@ -387,11 +209,11 @@ p.info{
   content: "";
   transition: all 0.2s ease-in-out;
 }
-#overlay-button:hover span, #overlay-button:hover span:before, #overlay-button:hover span:after {
+.overlay-button:hover span, .overlay-button:hover span:before, .overlay-button:hover span:after {
   background: rgb(39,52,33);
 }
 
-#overlay-button:hover{
+.overlay-button:hover{
   border:thin solid rgba(175,186,176,1);
   box-shadow:-1px -1px 3px rgba(39,52,33,1);
 }
@@ -399,408 +221,84 @@ p.info{
 input[type=checkbox] {
   display: none;
 }
-
-input[type=checkbox]:checked ~ #overlay {
-  visibility: visible;
-  top:0;
-  height:100%;
-  font-size:1em;
-  transition: .5s ease-in-out;
-}
-
-input[type=checkbox]:checked ~ #overlay-button:hover, input[type=checkbox]:checked ~ #overlay-button{
+input[type=checkbox]:checked ~ .overlay-button:hover, input[type=checkbox]:checked ~ .overlay-button{
   opacity:0.5;
   box-shadow: none;
 }
-input[type=checkbox]:checked ~ #overlay-button span:before {
+input[type=checkbox]:checked ~ .overlay-button span:before {
   transform: rotate(-45deg);
 }
-input[type=checkbox]:checked ~ #overlay-button span:after {
+input[type=checkbox]:checked ~ .overlay-button span:after {
   transform: rotate(-45deg);
 }
+/*----------------------------------------------
+------------------------------------------------*/
 
-
-@media only screen and (orientation: portrait){
-  .pageone .background, .pageone .frame{
-    background-attachment: scroll
-  }
-  .pageone .link{
-    display:flex;
-    height:100%;
-  }
-}
-
-
-
-/** PAGE TWO **/
-.pagetwo{
-  z-index: 100
-}
-.pagetwo .background{
-  background-image: url("michealle-site/circle-bg4.png");
-  background-attachment: fixed;
-  z-index:1;
-}
-.pagetwo .sandwich{
-  background-image: url("michealle-site/aphinitea.png");
-  background-size: auto 50%;
-  z-index:2;
-}
-.pagetwo .frame{
-  /*background-image: url("michealle-site/border2.png");
-  background-attachment: fixed;
-  z-index:3;*/
-}
-
-.pagetwo .link .overlay{
-  background:#d38d77;
-}
-
-.pagetwo .decoration { /* These are values shared by all three layers. */
-  box-sizing:border-box;
-  height:100%;
-  width:100%;
+.container{
   position:absolute;
-  background-size:100vh;
-  background-repeat:no-repeat;
-  background-attachment: fixed;
-  z-index:4;
-}
-
-.decoration.bottom {
-  background-image: url("michealle-site/bottom-flowers.png");
-  background-position: left bottom 3em;
-  z-index: 4;
-}
-.decoration.top {
-  background-image: url("michealle-site/top-flowers.png");
-  background-position: right 3em;
-  z-index: 4;
-}
-
-#overlay2 {
-  height: 100%;
-  width: 100%;
-  padding:0;
-  z-index: 999;
-  visibility: hidden;
-  position: absolute;
-  box-sizing: border-box;
-  top:-100%;
+  top:0;
   left:0;
   right:0;
-  font-size:0;
-}
-#overlay2.active {
-  visibility: visible;
-}
-#overlay2-input{
-  position:absolute;
-}
-#overlay2-button {
-  position: absolute;
-  left: calc(50% - 28px / 2);
-  top: calc(3em + 5%);
-  padding: 13px 8px;
-  z-index: 1000;
-  cursor: pointer;
-  user-select: none;
-  background: rgb(175,186,176);
-  border-radius: 100em;
-  border: thin solid rgb(200,210,200);
-  box-shadow: 1px 1px 0px rgba(150,160,150,.8);
-}
-#overlay2-button span {
-  height: 2px;
-  width: 12px;
-  border-radius: 2px;
-  background-color: white;
-  position: relative;
-  display: block;
-  transition: all 0.2s ease-in-out;
-  visibility: hidden;
-  background: pink;
-}
-#overlay2-button span:after {
-  height: 12px;
-  width: 2px;
-  top: calc(-10px / 2);
-  left: calc(10px / 2);
-  border-radius: 2px;
-  background-color: white;
-  position: absolute;
-  content: "";
-  transition: all 0.2s ease-in-out;
-  visibility: visible;
-}
-#overlay2-button span:before {
-  top: 0px;
-  visibility: visible;
-  height: 2px;
-  width: 12px;
-  border-radius: 2px;
-  background-color: white;
-  position: absolute;
-  content: "";
-  transition: all 0.2s ease-in-out;
-}
-#overlay2-button:hover span, #overlay2-button:hover span:before, #overlay2-button:hover span:after {
-  background: rgb(39,52,33);
-}
-#overlay2-button:hover{
-  border:thin solid rgba(175,186,176,1);
-  box-shadow:-1px -1px 3px rgba(39,52,33,.8);
-}
-input[type=checkbox] {
-  display: none;
-}
-
-input[type=checkbox]:checked ~ #overlay2 {
-  visibility: visible;
-  top:0;
-  height:100%;
-  font-size:1em;
-  transition: .5s ease-in-out;
-}
-
-input[type=checkbox]:checked ~ #overlay2-button:hover, input[type=checkbox]:checked ~ #overlay2-button{
-  opacity:0.5;
-  box-shadow: none;
-}
-input[type=checkbox]:checked ~ #overlay2-button span:before {
-  transform: rotate(-45deg);
-  opacity: 1;
-}
-input[type=checkbox]:checked ~ #overlay2-button span:after {
-  transform: rotate(-45deg);
-}
-
-
-@media only screen and (orientation: portrait){
-  .pagetwo .decoration {
-  background-size: 100vw;
-  }
-
-  .pagetwo .background, .pagetwo .decoration{
-    background-attachment: scroll
-  }
-
-  .pagetwo .sandwich{
-  background-size: 60%;
-  }
-}
-
-
-
-/** PAGE THREE **/
-.pagethree{
-  z-index: 100
-}
-
-.pagethree .background{
-  background-image: url("michealle-site/circle-bg3.png");
-  background-attachment: fixed;
-  z-index:2;
-}
-
-.pagethree .sandwich{
-  background-image: url("michealle-site/byanihan1.png");
-  z-index:2;
-}
-
-.pagethree .frame{
-  background-image: url("michealle-site/border3.png");
-  background-attachment: fixed;
-  z-index:3;
-}
-
-.pagethree .decoration{
-  box-sizing:border-box;
-  height:100%;
-  min-width:100%;
-  position:absolute;
   bottom:0;
-  background-size:auto 60%;
-  background-repeat:no-repeat;
-  background-position: center bottom 3em;
-  background-image: url("michealle-site/pine.png");
-  z-index:4;
-}
-
-.pagethree .link .overlay{
-  background:#55551c;
-}
-
-#overlay3 {
-  height: 100%;
-  width: 100%;
-  padding:0;
-  z-index: 999;
-  visibility: hidden;
-  position: absolute;
-  box-sizing: border-box;
-  top:-100%;
-  left:0;
-  right:0;
-  font-size: 0;
-}
-#overlay3.active {
-  visibility: visible;
-}
-#overlay3-input{
-  position:absolute;
-}
-#overlay3-button {
-  position: absolute;
-  left: calc(50% - 28px / 2);
-  top: calc(3em + 5%);
-  padding: 13px 8px;
-  z-index: 1000;
-  cursor: pointer;
-  user-select: none;
-  background: rgb(175,186,176);
-  border: thin solid rgb(200,210,200);
-  box-shadow: 1px 1px 0px rgba(150,160,150,.8);
-  border-radius: 100em;
-}
-
-#overlay3-button span {
-  height: 2px;
-  width: 12px;
-  border-radius: 2px;
-  background-color: white;
-  position: relative;
-  display: block;
-  transition: all 0.2s ease-in-out;
-  visibility: hidden;
-  background: pink;
-}
-#overlay3-button span:after {
-  height: 12px;
-  width: 2px;
-  top: calc(-10px / 2);
-  left: calc(10px / 2);
-  border-radius: 2px;
-  background-color: white;
-  position: absolute;
-  content: "";
-  transition: all 0.2s ease-in-out;
-  visibility: visible;
-}
-#overlay3-button span:before {
-  top: 0px;
-  visibility: visible;
-  height: 2px;
-  width: 12px;
-  border-radius: 2px;
-  background-color: white;
-  position: absolute;
-  content: "";
-  transition: all 0.2s ease-in-out;
-}
-#overlay3-button:hover span, #overlay3-button:hover span:before, #overlay3-button:hover span:after {
+  padding-top:3em;
+  padding-bottom: 3em;
   background:rgb(39,52,33);
 }
-#overlay3-button:hover{
-  border:thin solid rgba(175,186,176,1);
-  box-shadow:-1px -1px 3px rgba(39,52,33,1);
-}
-input[type=checkbox] {
-  display: none;
-}
-
-input[type=checkbox]:checked ~ #overlay3 {
-  visibility: visible;
-  top:0;
-  height:100%;
-  font-size:1em;
-  transition: .5s ease-in-out;
-}
-
-input[type=checkbox]:checked ~ #overlay3-button:hover, input[type=checkbox]:checked ~ #overlay3-button{
-  opacity:0.5;
-  box-shadow: none;
-}
-input[type=checkbox]:checked ~ #overlay3-button span:before {
-  transform: rotate(-45deg);
-  opacity: 1;
-}
-input[type=checkbox]:checked ~ #overlay3-button span:after {
-  transform: rotate(-45deg);
-}
-
-
-
-@media only screen and (orientation: portrait){
-  /*.pagethree .decoration{
-    height:70%;
-    background-size:200vw;
-  }*/
-
-  .pagethree .background, .pagethree .frame{
-    background-attachment: scroll
-  }
-}
-
-/** PAGE FOUR **/
-.pagefour{
-  z-index:100;
-}
-.pagefour .background{
-  background-image: url("michealle-site/circle-bg2.png");
-  z-index:1;
-  background-attachment: fixed;
-}
-.pagefour .frame{
-  background-image: url("michealle-site/border1.png");
-  z-index:2;
-}
-
-.link{
-  height:100%;
-  width:100%;
-  margin:0%;
-  box-sizing:border-box;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.snap-container {
+  display: flex;
+  align-items: center;
   flex-direction:column;
-  position:absolute;
+  height: 100%;
   width:100%;
-  height:100%;
-  z-index: 10;
-  text-align: center;
-  font-family: 'Poiret One', sans-serif;
-  font-size:1em;
-  line-height:1.8em;
-  letter-spacing:0.05em;
-  color: white;
-  text-shadow:-1px -1px 1px rgba(39,52,33,.7);
+  overflow: auto;
+  z-index: 0;
+  background-image:url("michealle-site/background.png");
+  background-size:contain;
+
+  scroll-snap-type: y mandatory; /* Chrome Canary */
+  scroll-snap-type: mandatory; /* Firefox */
+  -ms-scroll-snap-type: mandatory; /* IE/Edge */
+  -webkit-scroll-snap-type: mandatory; /* Safari */
+  -webkit-scroll-snap-destination: 0% 0%;
+  -webkit-overflow-scrolling: touch; /* important for iOS */
 }
 
-.pagefour a{
-  color: white;
-  text-shadow:-1px -1px 1px rgba(39,52,33,.7);
-  text-decoration: none;
-  box-shadow:none;
-  padding:0;
-  margin:0;
-  line-height: 1.5;
-  font-weight: normal
+.snap-container > div {
+  height: 100%;
+  width:100%;
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);  
+  scroll-snap-align: start; /* latest (Chrome 69+) */
+  scroll-snap-coordinate: 0% 0%; /* older (Firefox/IE) */
+  -webkit-scroll-snap-coordinate: 0% 0%; /* older (Safari) */
+  scroll-snap-stop:always;
+  z-index: 1
 }
-.pagefour a:hover{
-  text-shadow:1px 1px 1px rgba(39,52,33,.7);
-  box-shadow:none;
+
+.snap-container > div:nth-child(even) {
+  background: rgba(0,0,0,.2)
 }
-h1{
-  font-size:1.5em;
-  font-family: 'Josefin Sans', sans-serif;
-  letter-spacing:0em;
-  font-weight:400;
-  font-style: none;
-  color: white;
-  text-shadow:-1px -1px 1px rgb(39,52,33);
-  padding-bottom:.5em;
+
+.snap-container > div:nth-child(odd) {
+  background: transparent;
+}
+/*----------------------------------------------
+------------------------------------------------*/
+.page{
+  position:relative;
+  height:100%;
+  width:100%;
+  z-index: 100;
+}
+.content{
+  height:100%;
+  width:100%;
+  position: absolute;
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-size: contain;
 }
 hr{
   margin: .1em auto .1em auto;
@@ -808,17 +306,162 @@ hr{
   width: 1em;
   border:1px solid white;
 }
-p{
-  padding:1em 0;
-  max-width:500px;
-  font-family: 'Poiret One', sans-serif;
-  font-size:1em;
-  line-height:1.8em;
-  letter-spacing:0.01em;
-  color: white;
+.decoration{
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
-@media only screen and (orientation: portrait){
- .pagefour .background{
-    background-attachment: scroll;
+.url{
+  z-index:5;
+  display:flex;
+  justify-content:center;
+  width:40vh;
+  height:40vh;
+}
+/*----------------------------------------------
+------------------------------------------------*/
+
+#overlay{
+  background:#cf9229;
+}
+#zero .decoration{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  height:100%;
+  top:0;
+}
+#zero .text{
+  justify-content:center;
+  height:10%;
+}
+#zero .frame a{
+  z-index:5;
+  display:flex;
+  justify-content:center;
+  width:40vh;
+  height:40vh;
+}
+
+#zero .frame{
+  background-image: url("michealle-site/border2.png");
+  background-attachment: fixed;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:4;
+}
+#zero .background{
+  background-image: url("michealle-site/circle-bg.png");
+  background-attachment: fixed;
+  z-index:0;       
+}
+
+#zero .sandwich{
+  background-image: url("michealle-site/me.png");
+  z-index:2;
+}
+
+input[type=checkbox]:checked ~ #overlay {
+  visibility: visible;
+  height:100%;
+  top:0;
+  bottom:0;
+  font-size:1em;
+  transition: .5s ease-in-out;
+}
+
+/*----------------------------------------------
+------------------------------------------------*/
+#one .background{
+  background-image: url("michealle-site/circle-bg4.png");
+  background-attachment: fixed;
+  z-index:1;
+}
+#one .sandwich{
+  background-image: url("michealle-site/aphinitea.png");
+  background-size: 50% auto;
+  z-index:2;
+}
+@media only screen and (orientation: landscape){
+  #one .sandwich{
+    background-size:auto 70%;
   }
+}
+#one .decoration { /* These are values shared by all three layers. */
+  box-sizing:border-box;
+  height:100%;
+  width:100%;
+  position:absolute;
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  z-index:4;
+  background-size: contain;
+}
+#one .decoration.bottom {
+  background-image: url("michealle-site/bottom-flowers.png");
+  background-position: left bottom 3em;
+  z-index: 4;
+}
+#one .decoration.top {
+  background-image: url("michealle-site/top-flowers.png");
+  background-position: right top 3em;
+  z-index: 4;
+}
+#overlay2{
+  background:#d38d77;
+}
+input[type=checkbox]:checked ~ #overlay2 {
+  visibility: visible;
+  height:100%;
+  top:0;
+  bottom:0;
+  font-size:1em;
+  transition: .5s ease-in-out;
+}
+/*----------------------------------------------
+------------------------------------------------*/
+#overlay3{
+  background:#55551c;
+}
+#two{
+  z-index: 11
+}
+#two .background{
+  background-image: url("michealle-site/circle-bg3.png");
+  background-attachment: fixed;
+  z-index:2;
+}
+
+#two .sandwich{
+  background-image: url("michealle-site/byanihan1.png");
+  z-index:2;
+}
+
+#two .frame{
+  background-image: url("michealle-site/border3.png");
+  background-attachment: fixed;
+  z-index:3;
+}
+
+#two .decoration{
+  box-sizing:border-box;
+  height:100%;
+  min-width:100%;
+  position:absolute;
+  bottom:0;
+  background-size:auto 60%;
+  background-repeat:no-repeat;
+  background-position: center bottom;
+  background-image: url("michealle-site/pine.png");
+  z-index:4;
+}
+
+input[type=checkbox]:checked ~ #overlay3 {
+  visibility: visible;
+  height:100%;
+  top:0;
+  bottom:0;
+  font-size:1em;
+  transition: .5s ease-in-out;
 }
