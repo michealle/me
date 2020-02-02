@@ -134,28 +134,11 @@ li{
   background-position:center center;
   background-repeat:no-repeat;
 }
-p.info{
-  position: absolute;
-  top:10%;
-  display: inline-block;
-  text-align:center;
-  width:2em;
-  height:2em;
-  padding:.5em;
-  font-size:1em;
-  line-height: 1;
-  border-radius: 2em;
-  margin-left:calc(50% - 1em);
-  font-family:Georgia, serif;
-  font-weight:bold;
-  box-shadow:-1px -1px 2px rgba(0,0,0,0.8);
-  background:rgb(72,82,63);
-  color:white;
-  border:1px solid rgb(39,52,33);
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+@media only screen and (orientation: portrait){
+  .content{
+    background-size: 120vw;
+    }
 }
-
-
 .decoration{
   display:flex;
   justify-content:center;
@@ -170,20 +153,24 @@ p.info{
 
 .overlay{
   display:flex;
+  position:absolute;
+  height:0;
+  top:-100%;
+  left:0;
+  right:0;
+  font-size:0; 
+  padding:3em 10%;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  position:absolute;
-  left:0;
   box-sizing:border-box;
+  text-align: center;
   text-shadow:none;
   z-index:999;
   font-size:1em;
   line-height:1.5;
-  padding:3em 10%;
   min-height:calc(100% - 6em);
-  width:100%;
-  top:3em;
+  visibility:hidden;
 }
 .overlay:-webkit-scrollbar {
   display: none !important;
@@ -223,32 +210,102 @@ p.info{
   transform:scaleX(1);
   transform-origin:left;
 }
-
-@media only screen and (orientation: portrait){
-  .content{
-    background-size: 120vw;
-    }
+.overlay.active {
+  visibility: visible;
 }
+.overlay-input{
+  position:absolute;
+}
+.overlay-button {
+  position: absolute;
+  left: calc(50% - 28px / 2);
+  top: calc(3em + 5%);
+  padding: 13px 8px;
+  z-index: 1000;
+  cursor: pointer;
+  user-select: none;
+  background: rgb(175,186,176);
+  border: thin solid rgb(200,210,200);
+  box-shadow: 1px 1px 0px rgba(150,160,150,.8);
+  border-radius: 100em;
+}
+.overlay-button span {
+  height: 2px;
+  width: 12px;
+  border-radius: 2px;
+  background-color: white;
+  position: relative;
+  display: block;
+  transition: all 0.2s ease-in-out;
+  visibility: hidden;
+}
+.overlay-button span:after {
+  height: 12px;
+  width: 2px;
+  top: calc(-10px / 2);
+  left: calc(10px / 2);
+  border-radius: 2px;
+  background-color: white;
+  position: absolute;
+  content: "";
+  transition: all 0.2s ease-in-out;
+  visibility: visible;
+}
+.overlay-button span:before {
+  top: 0px;
+  visibility: visible;
+  height: 2px;
+  width: 12;
+  border-radius: 2px;
+  background-color: white;
+  position: absolute;
+  content: "";
+  transition: all 0.2s ease-in-out;
+}
+.overlay-button:hover span, .overlay-button:hover span:before, .overlay-button:hover span:after {
+  background: rgb(39,52,33);
+}
+
+.overlay-button:hover{
+  border:thin solid rgba(175,186,176,1);
+  box-shadow:-1px -1px 3px rgba(39,52,33,1);
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox]:checked ~ .overlay-button:hover, input[type=checkbox]:checked ~ .overlay-button{
+  opacity:0.5;
+  box-shadow: none;
+}
+input[type=checkbox]:checked ~ .overlay-button span:before {
+  transform: rotate(-45deg);
+}
+input[type=checkbox]:checked ~ .overlay-button span:after {
+  transform: rotate(-45deg);
+}
+
 
 
 
 
 /** PAGE ONE **/
-.pageone{
+#zero{
   z-index: 100;
 }
-.pageone .background{
+#zero .background{
   background-image: url("michealle-site/circle-bg.png");
   background-attachment: fixed;
   z-index:0;    
 }
 
-.pageone .sandwich{
+#zero .sandwich{
   background-image: url("michealle-site/me.png");
   z-index:2;
 }
 
-.pageone .frame a{
+#zero .frame a{
   z-index:5;
   display:flex;
   justify-content:center;
@@ -256,7 +313,7 @@ p.info{
   height:40vh;
 }
 
-.pageone .frame{
+#zero .frame{
   background-image: url("michealle-site/border2.png");
   background-attachment: fixed;
   display:flex;
@@ -264,7 +321,7 @@ p.info{
   align-items:center;
   z-index:4;
 }
-.pageone .decoration{
+#zero .decoration{
   display:flex;
   flex-direction:row;
   justify-content:center;
@@ -274,7 +331,7 @@ p.info{
   width:100%;
   position:absolute;
 }
-.pageone .decoration .text{
+#zero .decoration .text{
   position: absolute;
   left:0;
   right:0;
@@ -289,7 +346,7 @@ p.info{
   text-align: center;
   z-index:4;
 }
-.pageone .link{
+#zero .link{
   display:flex;
   flex-direction:row;
   justify-content:center;
@@ -300,7 +357,7 @@ p.info{
   box-sizing:border-box;
 }
 
-.pageone h1{
+#zero .text{
   font-family: 'Monoton', sans-serif;
   font-weight:400;
   font-style:normal;
@@ -311,94 +368,8 @@ p.info{
   text-shadow:none;
 }
 
-.pageone .link .overlay{
+#overlay{
   background:#cf9229;
-  top:0;
-  min-height:100%;
-}
-
-.pageone .link .overlay h1,.pageone .link .overlay a{
-  color:white;
-  text-shadow:none;
-  display:inline-block;
-}
-
-#overlay {
-  height: 0%;
-  width: 100%;
-  padding:0;
-  z-index: 999;
-  visibility: hidden;
-  position: absolute;
-  box-sizing: border-box;
-  top:-100%;
-  left:0;
-  right:0;
-  font-size:0em;
-}
-#overlay.active {
-  visibility: visible;
-}
-#overlay-input{
-  position:absolute;
-}
-#overlay-button {
-  position: absolute;
-  left: calc(50% - 28px / 2);
-  top: calc(3em + 5%);
-  padding: 13px 8px;
-  z-index: 1000;
-  cursor: pointer;
-  user-select: none;
-  background: rgb(175,186,176);
-  border: thin solid rgb(200,210,200);
-  box-shadow: 1px 1px 0px rgba(150,160,150,.8);
-  border-radius: 100em;
-}
-#overlay-button span {
-  height: 2px;
-  width: 12px;
-  border-radius: 2px;
-  background-color: white;
-  position: relative;
-  display: block;
-  transition: all 0.2s ease-in-out;
-  visibility: hidden;
-}
-#overlay-button span:after {
-  height: 12px;
-  width: 2px;
-  top: calc(-10px / 2);
-  left: calc(10px / 2);
-  border-radius: 2px;
-  background-color: white;
-  position: absolute;
-  content: "";
-  transition: all 0.2s ease-in-out;
-  visibility: visible;
-}
-#overlay-button span:before {
-  top: 0px;
-  visibility: visible;
-  height: 2px;
-  width: 12;
-  border-radius: 2px;
-  background-color: white;
-  position: absolute;
-  content: "";
-  transition: all 0.2s ease-in-out;
-}
-#overlay-button:hover span, #overlay-button:hover span:before, #overlay-button:hover span:after {
-  background: rgb(39,52,33);
-}
-
-#overlay-button:hover{
-  border:thin solid rgba(175,186,176,1);
-  box-shadow:-1px -1px 3px rgba(39,52,33,1);
-}
-
-input[type=checkbox] {
-  display: none;
 }
 
 input[type=checkbox]:checked ~ #overlay {
@@ -409,23 +380,13 @@ input[type=checkbox]:checked ~ #overlay {
   transition: .5s ease-in-out;
 }
 
-input[type=checkbox]:checked ~ #overlay-button:hover, input[type=checkbox]:checked ~ #overlay-button{
-  opacity:0.5;
-  box-shadow: none;
-}
-input[type=checkbox]:checked ~ #overlay-button span:before {
-  transform: rotate(-45deg);
-}
-input[type=checkbox]:checked ~ #overlay-button span:after {
-  transform: rotate(-45deg);
-}
 
 
 @media only screen and (orientation: portrait){
-  .pageone .background, .pageone .frame{
+  #zero .background, #zero .frame{
     background-attachment: scroll
   }
-  .pageone .link{
+  #zero .link{
     display:flex;
     height:100%;
   }
@@ -434,30 +395,30 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
 
 
 /** PAGE TWO **/
-.pagetwo{
+#one{
   z-index: 100
 }
-.pagetwo .background{
+#one .background{
   background-image: url("michealle-site/circle-bg4.png");
   background-attachment: fixed;
   z-index:1;
 }
-.pagetwo .sandwich{
+#one .sandwich{
   background-image: url("michealle-site/aphinitea.png");
   background-size: auto 50%;
   z-index:2;
 }
-.pagetwo .frame{
+#one .frame{
   /*background-image: url("michealle-site/border2.png");
   background-attachment: fixed;
   z-index:3;*/
 }
 
-.pagetwo .link .overlay{
+#overlay2{
   background:#d38d77;
 }
 
-.pagetwo .decoration { /* These are values shared by all three layers. */
+#one .decoration { /* These are values shared by all three layers. */
   box-sizing:border-box;
   height:100%;
   width:100%;
@@ -479,83 +440,6 @@ input[type=checkbox]:checked ~ #overlay-button span:after {
   z-index: 4;
 }
 
-#overlay2 {
-  height: 100%;
-  width: 100%;
-  padding:0;
-  z-index: 999;
-  visibility: hidden;
-  position: absolute;
-  box-sizing: border-box;
-  top:-100%;
-  left:0;
-  right:0;
-  font-size:0;
-}
-#overlay2.active {
-  visibility: visible;
-}
-#overlay2-input{
-  position:absolute;
-}
-#overlay2-button {
-  position: absolute;
-  left: calc(50% - 28px / 2);
-  top: calc(3em + 5%);
-  padding: 13px 8px;
-  z-index: 1000;
-  cursor: pointer;
-  user-select: none;
-  background: rgb(175,186,176);
-  border-radius: 100em;
-  border: thin solid rgb(200,210,200);
-  box-shadow: 1px 1px 0px rgba(150,160,150,.8);
-}
-#overlay2-button span {
-  height: 2px;
-  width: 12px;
-  border-radius: 2px;
-  background-color: white;
-  position: relative;
-  display: block;
-  transition: all 0.2s ease-in-out;
-  visibility: hidden;
-  background: pink;
-}
-#overlay2-button span:after {
-  height: 12px;
-  width: 2px;
-  top: calc(-10px / 2);
-  left: calc(10px / 2);
-  border-radius: 2px;
-  background-color: white;
-  position: absolute;
-  content: "";
-  transition: all 0.2s ease-in-out;
-  visibility: visible;
-}
-#overlay2-button span:before {
-  top: 0px;
-  visibility: visible;
-  height: 2px;
-  width: 12px;
-  border-radius: 2px;
-  background-color: white;
-  position: absolute;
-  content: "";
-  transition: all 0.2s ease-in-out;
-}
-#overlay2-button:hover span, #overlay2-button:hover span:before, #overlay2-button:hover span:after {
-  background: rgb(39,52,33);
-}
-#overlay2-button:hover{
-  border:thin solid rgba(175,186,176,1);
-  box-shadow:-1px -1px 3px rgba(39,52,33,.8);
-}
-input[type=checkbox] {
-  display: none;
-}
-
 input[type=checkbox]:checked ~ #overlay2 {
   visibility: visible;
   top:0;
@@ -564,29 +448,17 @@ input[type=checkbox]:checked ~ #overlay2 {
   transition: .5s ease-in-out;
 }
 
-input[type=checkbox]:checked ~ #overlay2-button:hover, input[type=checkbox]:checked ~ #overlay2-button{
-  opacity:0.5;
-  box-shadow: none;
-}
-input[type=checkbox]:checked ~ #overlay2-button span:before {
-  transform: rotate(-45deg);
-  opacity: 1;
-}
-input[type=checkbox]:checked ~ #overlay2-button span:after {
-  transform: rotate(-45deg);
-}
-
 
 @media only screen and (orientation: portrait){
-  .pagetwo .decoration {
+  #one .decoration {
   background-size: 100vw;
   }
 
-  .pagetwo .background, .pagetwo .decoration{
+  #one .background, #one .decoration{
     background-attachment: scroll
   }
 
-  .pagetwo .sandwich{
+  #one .sandwich{
   background-size: 60%;
   }
 }
@@ -594,28 +466,28 @@ input[type=checkbox]:checked ~ #overlay2-button span:after {
 
 
 /** PAGE THREE **/
-.pagethree{
+#two{
   z-index: 100
 }
 
-.pagethree .background{
+#two .background{
   background-image: url("michealle-site/circle-bg3.png");
   background-attachment: fixed;
   z-index:2;
 }
 
-.pagethree .sandwich{
+#two .sandwich{
   background-image: url("michealle-site/byanihan1.png");
   z-index:2;
 }
 
-.pagethree .frame{
+#two .frame{
   background-image: url("michealle-site/border3.png");
   background-attachment: fixed;
   z-index:3;
 }
 
-.pagethree .decoration{
+#two .decoration{
   box-sizing:border-box;
   height:100%;
   min-width:100%;
@@ -628,88 +500,9 @@ input[type=checkbox]:checked ~ #overlay2-button span:after {
   z-index:4;
 }
 
-.pagethree .link .overlay{
+#overlay3{
   background:#55551c;
 }
-
-#overlay3 {
-  height: 100%;
-  width: 100%;
-  padding:0;
-  z-index: 999;
-  visibility: hidden;
-  position: absolute;
-  box-sizing: border-box;
-  top:-100%;
-  left:0;
-  right:0;
-  font-size: 0;
-}
-#overlay3.active {
-  visibility: visible;
-}
-#overlay3-input{
-  position:absolute;
-}
-#overlay3-button {
-  position: absolute;
-  left: calc(50% - 28px / 2);
-  top: calc(3em + 5%);
-  padding: 13px 8px;
-  z-index: 1000;
-  cursor: pointer;
-  user-select: none;
-  background: rgb(175,186,176);
-  border: thin solid rgb(200,210,200);
-  box-shadow: 1px 1px 0px rgba(150,160,150,.8);
-  border-radius: 100em;
-}
-
-#overlay3-button span {
-  height: 2px;
-  width: 12px;
-  border-radius: 2px;
-  background-color: white;
-  position: relative;
-  display: block;
-  transition: all 0.2s ease-in-out;
-  visibility: hidden;
-  background: pink;
-}
-#overlay3-button span:after {
-  height: 12px;
-  width: 2px;
-  top: calc(-10px / 2);
-  left: calc(10px / 2);
-  border-radius: 2px;
-  background-color: white;
-  position: absolute;
-  content: "";
-  transition: all 0.2s ease-in-out;
-  visibility: visible;
-}
-#overlay3-button span:before {
-  top: 0px;
-  visibility: visible;
-  height: 2px;
-  width: 12px;
-  border-radius: 2px;
-  background-color: white;
-  position: absolute;
-  content: "";
-  transition: all 0.2s ease-in-out;
-}
-#overlay3-button:hover span, #overlay3-button:hover span:before, #overlay3-button:hover span:after {
-  background:rgb(39,52,33);
-}
-#overlay3-button:hover{
-  border:thin solid rgba(175,186,176,1);
-  box-shadow:-1px -1px 3px rgba(39,52,33,1);
-}
-input[type=checkbox] {
-  display: none;
-}
-
 input[type=checkbox]:checked ~ #overlay3 {
   visibility: visible;
   top:0;
@@ -718,41 +511,27 @@ input[type=checkbox]:checked ~ #overlay3 {
   transition: .5s ease-in-out;
 }
 
-input[type=checkbox]:checked ~ #overlay3-button:hover, input[type=checkbox]:checked ~ #overlay3-button{
-  opacity:0.5;
-  box-shadow: none;
-}
-input[type=checkbox]:checked ~ #overlay3-button span:before {
-  transform: rotate(-45deg);
-  opacity: 1;
-}
-input[type=checkbox]:checked ~ #overlay3-button span:after {
-  transform: rotate(-45deg);
-}
-
-
-
 @media only screen and (orientation: portrait){
-  /*.pagethree .decoration{
+  /*#two .decoration{
     height:70%;
     background-size:200vw;
   }*/
 
-  .pagethree .background, .pagethree .frame{
+  #two .background, #two .frame{
     background-attachment: scroll
   }
 }
 
 /** PAGE FOUR **/
-.pagefour{
+#three{
   z-index:100;
 }
-.pagefour .background{
+#three .background{
   background-image: url("michealle-site/circle-bg2.png");
   z-index:1;
   background-attachment: fixed;
 }
-.pagefour .frame{
+#three .frame{
   background-image: url("michealle-site/border1.png");
   z-index:2;
 }
@@ -779,7 +558,7 @@ input[type=checkbox]:checked ~ #overlay3-button span:after {
   text-shadow:-1px -1px 1px rgba(39,52,33,.7);
 }
 
-.pagefour a{
+#three a{
   color: white;
   text-shadow:-1px -1px 1px rgba(39,52,33,.7);
   text-decoration: none;
@@ -789,7 +568,7 @@ input[type=checkbox]:checked ~ #overlay3-button span:after {
   line-height: 1.5;
   font-weight: normal
 }
-.pagefour a:hover{
+#three a:hover{
   text-shadow:1px 1px 1px rgba(39,52,33,.7);
   box-shadow:none;
 }
@@ -819,7 +598,7 @@ p{
   color: white;
 }
 @media only screen and (orientation: portrait){
- .pagefour .background{
+ #three .background{
     background-attachment: scroll;
   }
 }
