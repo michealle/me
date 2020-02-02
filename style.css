@@ -398,6 +398,7 @@ input[type=checkbox]:checked ~ #overlay {
   background-attachment: fixed;
   z-index:4;
   background-size: contain;
+  -webkit-background-size:contain;
 }
 #one .decoration.bottom {
   background-image: url("michealle-site/bottom-flowers.png");
