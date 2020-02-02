@@ -299,6 +299,7 @@ input[type=checkbox]:checked ~ .overlay-button span:after {
   background-position:center center;
   background-repeat:no-repeat;
   background-size: contain;
+  -webkit-background-size: contain;
 }
 hr{
   margin: .1em auto .1em auto;
