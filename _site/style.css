@@ -398,6 +398,7 @@ input[type=checkbox]:checked ~ #overlay {
 #one .decoration { /* These are values shared by all three layers. */
   box-sizing:border-box;
   width:100%;
+  min-height:100%;
   top:0;
   bottom:0;
   position:absolute;
@@ -455,7 +456,8 @@ input[type=checkbox]:checked ~ #overlay2 {
 
 #two .decoration{
   box-sizing:border-box;
-  height:100%;
+  height:auto;
+  min-height:100%;
   min-width:100%;
   position:absolute;
   bottom:0;
